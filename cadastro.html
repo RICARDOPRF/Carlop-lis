@@ -27,41 +27,34 @@
         }
     </script>
 
-<style id="cafe-bg-style">
-/* Fundo elegante (quase transparente) — Café Carlópolis */
-:root{
-  --cafe-bg-1: url('https://chb.com.br/storage/blog/206051.jpg');
-  --cafe-bg-2: url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');
+
+<style id="cafe-marrom-style">
+/* Fundo café elegante + painéis marrom-claro (#f3e4d1) */
+:root {
+  --painel-bg: #f3e4d1;
+  --painel-text: #3a2a18;
 }
-html, body{ min-height:100%; }
-body{
-  position: relative;
-}
-/* Imagem bem fraquinha atrás de tudo */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background-image: var(--cafe-bg-1);
+body {
+  background-image: url('https://chb.com.br/storage/blog/206051.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.08;           /* <<< quase transparente */
-  filter: saturate(1.05) contrast(1.05);
-  z-index: -2;
-  pointer-events: none;
+  background-attachment: fixed;
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: multiply;
 }
-/* Camada de contraste (mantém leitura perfeita sem mudar layout) */
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55); /* ajuste fino: 0.45–0.65 */
-  z-index: -1;
-  pointer-events: none;
+.container, .card, .section, .resumo-pedido, .checkout-box, .cart-summary, .cart-box {
+  background-color: var(--painel-bg) !important;
+  color: var(--painel-text) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
-/* Se quiser alternar para a outra foto, troque var(--cafe-bg-1) por var(--cafe-bg-2) acima. */
+button, .btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
 </style>
+
 </head>
 <body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display group/design-root overflow-x-hidden text-[#1b140d] dark:text-white transition-colors">
 <header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
