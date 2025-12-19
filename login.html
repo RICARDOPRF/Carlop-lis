@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login — Café Carlópolis</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+<style id="cafe-bg-style">
+/* Fundo elegante (quase transparente) — Café Carlópolis */
+:root{
+  --cafe-bg-1: url('https://chb.com.br/storage/blog/206051.jpg');
+  --cafe-bg-2: url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');
+}
+html, body{ min-height:100%; }
+body{
+  position: relative;
+}
+/* Imagem bem fraquinha atrás de tudo */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background-image: var(--cafe-bg-1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08;           /* <<< quase transparente */
+  filter: saturate(1.05) contrast(1.05);
+  z-index: -2;
+  pointer-events: none;
+}
+/* Camada de contraste (mantém leitura perfeita sem mudar layout) */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* ajuste fino: 0.45–0.65 */
+  z-index: -1;
+  pointer-events: none;
+}
+/* Se quiser alternar para a outra foto, troque var(--cafe-bg-1) por var(--cafe-bg-2) acima. */
+</style>
 </head>
 <body class="bg-neutral-950 text-neutral-100">
 <header class="border-b border-white/10">
