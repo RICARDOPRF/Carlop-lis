@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login do Cliente - Café Carlópolis</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d47311",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display group/design-root overflow-x-hidden text-[#1b140d] dark:text-white transition-colors">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-200 dark:border-neutral-800 px-6 lg:px-10 py-3 bg-white dark:bg-background-dark z-20">
+<div class="flex items-center gap-4 text-[#1b140d] dark:text-white">
+<div class="size-6 text-primary">
+<!-- Branding Icon -->
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Produtos</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Sobre nós</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-opacity-90 transition-opacity text-[#fcfaf8] text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Cadastre-se</span>
+</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden flex items-center justify-center text-[#1b140d] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Main Section with Hero Split & Form -->
+<main class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 lg:py-10 px-4 md:px-20 lg:px-40">
+<div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+<div class="@container">
+<div class="flex flex-col gap-6 lg:gap-16 @[864px]:flex-row items-stretch">
+<!-- Hero Image Side -->
+<div class="w-full @[864px]:w-1/2 min-h-[300px] @[864px]:min-h-[600px] bg-center bg-no-repeat bg-cover rounded-xl shadow-lg order-1 @[864px]:order-1 relative overflow-hidden" data-alt="A detailed close-up of dark roasted coffee beans with a rich crema espresso shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlxdCOlB_rsohzLzHI-1DHSvu3MwKPttTpPvIsXfkQGhUKIl0XjLN7bHq7tNVj8Z5Lb0IxQ9-qkonZQkMFHePvx4sqS7xRfxbjkQSE7wu_fjh9FzGJL2WZf8eFtS3adkmWm3vwohi7lKx89CnZuTNDBdQ3av2j95dvQPJ35Z6hUOH4pm1E3odCvIIWiNdvlUE92-oOext6t1ejsaw3pHcyXaPrqXv63gINfFlBxqpY3ktRG3Il9AhGB8Hme2Zh3DQwnLbBygQ7fcGX");'>
+<div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+<!-- Subtle brand overlay -->
+<div class="absolute bottom-6 left-6 text-white p-4 bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 max-w-xs hidden @[864px]:block">
+<p class="font-bold text-lg">Sabor Autêntico</p>
+<p class="text-sm opacity-90">Do grão à xícara, a tradição que desperta seus sentidos.</p>
+</div>
+</div>
+<!-- Login Form Side -->
+<div class="flex flex-col gap-6 justify-center @[864px]:w-1/2 order-2 @[864px]:order-2 py-4">
+<!-- Header Text -->
+<div class="flex flex-col gap-2 text-left mb-4">
+<h1 class="text-[#1b140d] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                                    Bem-vindo de volta
+                                </h1>
+<h2 class="text-[#1b140d] dark:text-neutral-300 text-sm font-normal leading-normal @[480px]:text-base">
+                                    Acesse sua conta para gerenciar seus pedidos e saborear o melhor café gourmet.
+                                </h2>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-5 max-w-[480px]">
+<!-- Email Field -->
+<label class="flex flex-col w-full">
+<p class="text-[#1b140d] dark:text-neutral-200 text-base font-medium leading-normal pb-2">E-mail ou nome de usuário</p>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1b140d] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-primary h-14 placeholder:text-[#9a734c] dark:placeholder:text-neutral-500 p-[15px] text-base font-normal leading-normal transition-all" placeholder="exemplo@email.com" value=""/>
+</div>
+</label>
+<!-- Password Field -->
+<label class="flex flex-col w-full">
+<p class="text-[#1b140d] dark:text-neutral-200 text-base font-medium leading-normal pb-2">Senha</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1b140d] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-primary h-14 placeholder:text-[#9a734c] dark:placeholder:text-neutral-500 p-[15px] pr-12 text-base font-normal leading-normal transition-all" placeholder="Digite sua senha" type="password" value=""/>
+<div class="absolute right-0 top-0 h-full flex items-center justify-center pr-[15px] text-[#9a734c] dark:text-neutral-400 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+<div class="flex justify-end pt-2">
+<a class="text-sm font-medium text-primary hover:underline" href="#">Esqueceu a senha?</a>
+</div>
+</label>
+<!-- Submit Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary hover:bg-opacity-90 transition-opacity text-[#fcfaf8] text-base font-bold leading-normal tracking-[0.015em] mt-2 shadow-md hover:shadow-lg">
+<span class="truncate">Entrar</span>
+</button>
+<!-- Divider -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-neutral-200 dark:border-neutral-700"></div>
+<span class="flex-shrink mx-4 text-neutral-400 text-sm">ou continue com</span>
+<div class="flex-grow border-t border-neutral-200 dark:border-neutral-700"></div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-12 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 bg-white dark:bg-neutral-800 transition-colors">
+<span class="material-symbols-outlined text-xl">g_mobiledata</span>
+<span class="text-sm font-bold text-neutral-700 dark:text-neutral-200">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 bg-white dark:bg-neutral-800 transition-colors">
+<span class="material-symbols-outlined text-xl">public</span>
+<span class="text-sm font-bold text-neutral-700 dark:text-neutral-200">Facebook</span>
+</button>
+</div>
+<!-- Sign Up Prompt -->
+<div class="text-center mt-2">
+<p class="text-[#1b140d] dark:text-neutral-300 text-sm">
+                                        Não tem uma conta? 
+                                        <a class="text-primary font-bold hover:underline ml-1" href="#">Cadastre-se</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+<script src="site.js" defer></script>
+</body></html>
+

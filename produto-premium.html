@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Café Premium Carlópolis - Página de Produto</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d47311",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                        "accent-gold": "#c9ad92",
+                        "surface-dark": "#332619",
+                        "border-brown": "#483623",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #221910; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #483623; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d47311; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<div class="flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-brown px-4 py-4 md:px-10 bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">coffee_maker</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">Café Carlópolis</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+<a class="text-accent-gold text-sm font-bold leading-normal border-b-2 border-primary pb-0.5" href="#">Assinaturas</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Acessórios</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64 group">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full ring-1 ring-border-brown focus-within:ring-primary transition-all">
+<div class="text-accent-gold flex border-none bg-surface-dark items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-l-none text-white focus:outline-0 focus:ring-0 border-none bg-surface-dark h-full placeholder:text-accent-gold/50 px-4 pl-2 text-base font-normal leading-normal" placeholder="Buscar..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex flex-col items-center w-full px-4 md:px-8 py-6">
+<div class="max-w-[1200px] w-full flex flex-col gap-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-2 text-sm">
+<a class="text-accent-gold hover:text-primary transition-colors font-medium" data-nav="1" href="index.html">Início</a>
+<span class="text-accent-gold/50">/</span>
+<a class="text-accent-gold hover:text-primary transition-colors font-medium" href="#">Cafés Especiais</a>
+<span class="text-accent-gold/50">/</span>
+<span class="text-white font-medium">Café Premium Carlópolis</span>
+</div>
+<!-- Hero Product Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start animate-fade-in">
+<!-- Left: Product Gallery -->
+<div class="w-full flex flex-col gap-4 sticky top-24">
+<div class="w-full aspect-[4/5] md:aspect-square bg-surface-dark/50 rounded-xl overflow-hidden relative border border-border-brown group">
+<!-- Background glow effect -->
+<div class="absolute inset-0 bg-gradient-to-tr from-background-dark via-transparent to-primary/10 opacity-50"></div>
+<!-- Main Image -->
+<div class="absolute inset-0 flex items-center justify-center p-8 transition-transform duration-500 group-hover:scale-105">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat drop-shadow-2xl" data-alt="Lata especial do Café Premium Carlópolis em um fundo escuro e elegante" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAH52QpxOKkPfC7F6Q4q9HbIfbNTcYuk9VE2YeDmR9SdVAsS6dWIufDcaZkMiPd2jIJoYyHiuxG3t7yy2bTzmDkQQ7RKlfEczG7hJOZhOBEzi53uW4FrdE1_qotqpYoqdCf8OQGljZ0uX-zihF6JQUx4F2crsoOhzeyNod0-RjlSTt4LhPR12OoErixWh_TJFx_PEtcfxDtQ-mVubPHAfW_9fsgBeDjKY330pMJgLfI5yafhm3qJTk_xk9Fr2Bn4lpOnpZMBe_TcsOQ');">
+</div>
+</div>
+<!-- Badges -->
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">PREMIUM</span>
+<span class="bg-surface-dark text-accent-gold border border-accent-gold/30 text-xs font-bold px-3 py-1 rounded-full">LATA 500g</span>
+</div>
+</div>
+<!-- Thumbnails (Mockup) -->
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square rounded-lg border-2 border-primary bg-surface-dark p-2 cursor-pointer">
+<div class="w-full h-full bg-cover bg-center rounded-sm" data-alt="Vista frontal da lata de café" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYT9EPbKiWsdf-8QoU-4Q5AET7dOQj8Voc7EwheiA5A41EoHECQZMXnVj-aOtntp3fmsZYkox5usmnZlWvHFq-70VxUO48-SJBdgz7bAATjsrKK8wB_t4XmINALbraqCG-hvQ9JHlVtERBdV40SP85GTC9u9VqMGw9Nh7DDwP2tiwzGSiY958V5NZ9NWcJJyBXGIYirM9qNDF75sIv_NZriL4DostU-bgTQOpqGi-fdUo8lns4obsOM2F65VhPdU-JT7X9usYvi2tn');"></div>
+</button>
+<button class="aspect-square rounded-lg border border-border-brown bg-surface-dark p-2 hover:border-accent-gold/50 cursor-pointer transition-colors">
+<div class="w-full h-full bg-cover bg-center rounded-sm" data-alt="Grãos de café torrados em detalhe macro" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJIfGBVahfXISSkBXhFp2NOxjZkP-W-T1uZ2FucHoxGUzQj1ymADSbbHV9Zzzmi_2k9BKg_FRM2js9SlSj9SFUk-TCZOQP0Z2Rau2uPHERt8Znk86ZGV-PKwGeHR0K4AlFFcqCAQgozN568JIirmKEtB1xYKoeo3Uh3jdxbXeCMACTQuIaUKf4kTr-R1HkEIkzFo7LaCNouQOvt73UdBhb8kHv8RAo43EY-nHyDXOI-SNdkAhHdqtcy0Ifz818jE9EaYdatDKBhwdx');"></div>
+</button>
+<button class="aspect-square rounded-lg border border-border-brown bg-surface-dark p-2 hover:border-accent-gold/50 cursor-pointer transition-colors">
+<div class="w-full h-full bg-cover bg-center rounded-sm" data-alt="Xícara de café sendo servida com creme perfeito" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUeka3ljDiGc5Dh83WOMSFBpYIq40KY46p4ktukWHB-xPs3t7MKT9-ipzvwCw_6YyAJoAkivBm7U9B8oPc-EQn4KYB1Yvaeh5vgh_6uFco0VxG2jsuBH-y2KVUQxd1Z7OG_kzBWkbjhcWfK5ME9UWND3_4udKG9Jg2i-UqFVzV5xLSREdooOTv7EwG8YDuPECLdgRvh-1oNYxq1804yJm3SsPLBT8IhR7M8lRN-WA6XbSNZIXEMEBZ5LjGloAKNgJ3fDnaT2bYVEWT');"></div>
+</button>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="flex flex-col gap-8 pt-2">
+<!-- Title & Review -->
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+                                Café Premium Carlópolis
+                            </h1>
+<div class="flex items-center gap-3">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star_half</span>
+</div>
+<span class="text-accent-gold text-sm font-medium">(128 avaliações)</span>
+</div>
+</div>
+<!-- Price Section -->
+<div class="flex items-end gap-3 border-b border-border-brown pb-6">
+<span class="text-3xl text-primary font-bold">R$ 65,00</span>
+<span class="text-accent-gold/60 text-lg mb-1 line-through">R$ 79,90</span>
+<span class="text-xs bg-green-900/40 text-green-400 px-2 py-1 rounded mb-1 ml-auto">Em estoque</span>
+</div>
+<!-- Description -->
+<div class="prose prose-invert">
+<p class="text-gray-300 text-base leading-relaxed">
+                                Cultivado nas montanhas do Norte Pioneiro do Paraná, esta edição especial em lata de 500g preserva notas elegantes e doçura natural. Uma experiência <b>100% Arábica</b> de torra média, corpo leve e finalização suave. Ideal para quem busca um café sofisticado e equilibrado.
+                            </p>
+</div>
+<!-- Specifications Grid -->
+<div class="grid grid-cols-2 gap-4 bg-surface-dark p-5 rounded-xl border border-border-brown/50">
+<div class="flex flex-col gap-1">
+<span class="text-accent-gold text-xs uppercase tracking-wider font-semibold">Peso</span>
+<span class="text-white font-medium">500g</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-accent-gold text-xs uppercase tracking-wider font-semibold">Embalagem</span>
+<span class="text-white font-medium">Lata Especial</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-accent-gold text-xs uppercase tracking-wider font-semibold">Torra</span>
+<span class="text-white font-medium">Média (City Roast)</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-accent-gold text-xs uppercase tracking-wider font-semibold">Variedade</span>
+<span class="text-white font-medium">100% Arábica</span>
+</div>
+</div>
+<!-- Purchase Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<!-- Quantity -->
+<div class="flex items-center bg-surface-dark rounded-lg border border-border-brown h-12 w-32">
+<button class="w-10 h-full flex items-center justify-center text-accent-gold hover:text-white hover:bg-white/5 rounded-l-lg transition">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-full bg-transparent border-none text-center text-white font-bold focus:ring-0 appearance-none m-0 p-0" type="number" value="1"/>
+<button class="w-10 h-full flex items-center justify-center text-accent-gold hover:text-white hover:bg-white/5 rounded-r-lg transition">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<!-- Add to Cart -->
+<button class="flex-1 bg-primary hover:bg-orange-600 text-white font-bold text-lg rounded-lg h-12 px-6 shadow-lg shadow-orange-900/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+                                Adicionar ao Carrinho
+                            </button>
+</div>
+<!-- Shipping/Guarantee info -->
+<div class="flex items-center gap-6 pt-4 text-xs text-accent-gold/80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+                                Frete Grátis para o Sul
+                            </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+                                Garantia de Qualidade
+                            </div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-border-brown my-8"></div>
+<!-- Sensory Profile Section -->
+<section class="flex flex-col gap-10 py-10">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<h2 class="text-white text-3xl font-bold leading-tight">
+                            Perfil Sensorial
+                        </h2>
+<p class="text-gray-400 text-base max-w-[720px]">
+                            Cada gole conta uma história das montanhas paranaenses. Descubra as nuances que tornam este lote único.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-4 rounded-xl border border-border-brown bg-surface-dark p-6 hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">emoji_nature</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-white text-xl font-bold">Doçura Natural</h3>
+<p class="text-accent-gold text-sm leading-relaxed">
+                                    Notas caramelizadas e de chocolate ao leite provenientes da maturação lenta dos grãos nas sombras da montanha.
+                                </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-4 rounded-xl border border-border-brown bg-surface-dark p-6 hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">flight</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-white text-xl font-bold">Corpo Leve</h3>
+<p class="text-accent-gold text-sm leading-relaxed">
+                                    Um equilíbrio perfeito que não pesa no paladar, com uma textura sedosa ideal para consumo a qualquer hora do dia.
+                                </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-4 rounded-xl border border-border-brown bg-surface-dark p-6 hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-white text-xl font-bold">Finalização Suave</h3>
+<p class="text-accent-gold text-sm leading-relaxed">
+                                    Retrogosto agradável, limpo e persistente, com leve acidez cítrica e zero amargor excessivo.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Info Tabs/Accordion -->
+<section class="w-full bg-surface-dark rounded-2xl p-8 border border-border-brown mb-10">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-border-brown pb-6 md:pb-0 md:pr-6">
+<h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+                                Origem Controlada
+                            </h3>
+<div class="h-40 w-full bg-cover bg-center rounded-lg mb-4 opacity-80 hover:opacity-100 transition-opacity" data-alt="Mapa topográfico estilizado da região de Carlópolis" data-location="Norte Pioneiro do Paraná" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-QjR8ZSv0tnGv8LB5XFbLiE02FbiNxzRbZ-XeU_spWdmO47c3k5T_NOESTrzJx8xyEydZK8STuxdxBI0_ZfAtXqLOiwHGAVjHXXIHvkP1EwhwusHI1z2jZe8RBbd9fj3RQ9U62B0cn1v7IH5J56hZkkXZGaUttXCEXyLRFDeqxwB7y1RM5TrWBboLtWLb_0b4hvLhoSiA4YhUT2SMHn_G7C1OJkY-_nYibWk2f_WChGSTGGv49ri3gFqpsEBjSnKQvKXGkSXzHPSw');"></div>
+<p class="text-sm text-gray-400">
+                                Produzido na Fazenda Santa Clara, a 900m de altitude. O microclima da região favorece o desenvolvimento complexo dos açúcares no grão.
+                            </p>
+</div>
+<div class="w-full md:w-2/3 flex flex-col gap-6">
+<div>
+<h3 class="text-white text-xl font-bold mb-2">Métodos de Preparo Sugeridos</h3>
+<p class="text-sm text-gray-400 mb-4">Para extrair o melhor deste lote, recomendamos:</p>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-background-dark border border-border-brown">
+<span class="material-symbols-outlined text-primary">coffee_maker</span>
+<span class="text-sm text-white">Prensa Francesa</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-background-dark border border-border-brown">
+<span class="material-symbols-outlined text-primary">filter_alt</span>
+<span class="text-sm text-white">V60 / Coado</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-background-dark border border-border-brown">
+<span class="material-symbols-outlined text-primary">local_cafe</span>
+<span class="text-sm text-white">Aeropress</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-white text-xl font-bold mb-2">Sustentabilidade</h3>
+<p class="text-sm text-gray-400">
+                                    Nossa lata é 100% reciclável e reutilizável. O café possui selo de Certificação de Origem e segue rigorosos padrões de agricultura sustentável, preservando as nascentes locais.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Products Title -->
+<div class="flex items-center justify-between pt-8 border-t border-border-brown w-full">
+<h2 class="text-white text-2xl font-bold">Você também pode gostar</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Ver todos</a>
+</div>
+<!-- Related Products Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full pb-10">
+<!-- Product 1 -->
+<a class="group flex flex-col gap-3" href="#">
+<div class="aspect-square w-full rounded-lg bg-surface-dark overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Embalagem de papel craft com café moído" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXU_IiBG4DR843fJRSnBXI29f8sS4xDZ83zvluW6rYv9A6sNt0tBpCZqCtec6V6bap17Pb-QTAiLTve5Cev_w8npVjgpZEqqswbwmldK8tMKPbYwyLR-rmoSPrH20evR5PsQkRjfe4OfY7YgRFcQEhChUSsmwgEsX4p3j7aKH-By3dkLNiTnyxoObZt0Rjz7p108ksGVAk05uoo65Mq1q8d7Dl-mnqJb-wV2I56-QQHWNAhb4E1GzIZmQtnkOZ3YH-uNQIAIEaC6aw');"></div>
+<div class="absolute bottom-2 right-2 size-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-primary text-sm">add_shopping_cart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h4 class="text-white font-bold group-hover:text-primary transition-colors">Blend da Casa</h4>
+<span class="text-accent-gold text-sm">R$ 42,00</span>
+</div>
+</a>
+<!-- Product 2 -->
+<a class="group flex flex-col gap-3" href="#">
+<div class="aspect-square w-full rounded-lg bg-surface-dark overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Kit com duas xícaras de cerâmica preta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAC8ImERFNJf2Ts2sY3KpF8a67e7PaMv2n9Jm7sRoVcOM-VabkgrPJBfbMF8FTG3NHFH3_gm4VDCSZCFbNxwxb10n93qBr4hNVWFAbl3aZB5DL4cIT6_mKmK2dtvOPvcjwRQRzZYT4nLaioMmo_nvZgBDEyKuTEUxq3yWEn1KTfOVOx1b_XAoGgfc13jlvunn1GoeDAD_lCxW4AjFhQus-xPyG3lVQ0yMbx1-_gNqQjDBPmVrpCgeY5xfByz3tG04tWy1_6KyKIS4nT');"></div>
+<div class="absolute bottom-2 right-2 size-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-primary text-sm">add_shopping_cart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h4 class="text-white font-bold group-hover:text-primary transition-colors">Kit Degustação</h4>
+<span class="text-accent-gold text-sm">R$ 89,90</span>
+</div>
+</a>
+<!-- Product 3 -->
+<a class="group flex flex-col gap-3 hidden md:flex" href="#">
+<div class="aspect-square w-full rounded-lg bg-surface-dark overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Prensa francesa de vidro com café" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVNJdlAHZo42iVCVDgkYYNyNGf0SYmmGmFkuFWySIB2VitDwanigVWaXR8fe0RS7Y9jgBicwGwL8xktm9Uqo9Sj2mY-T83AVlbld1rcPIXLvtr6GLXzYitJSIW6RQHCbJyOT-l6YEkeAzxVagtSQ48pfEUWYhBqWKsxSHuQEYvLLv21Fw-sWIu8zpa-dhZmbbCbYqZQhEgr2drOv39QRW26aIeTNwmL7FSSdUAuB1GEY4KbuhuemRctgWA_rP12TozIfIyrNjUv39P');"></div>
+<div class="absolute bottom-2 right-2 size-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-primary text-sm">add_shopping_cart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h4 class="text-white font-bold group-hover:text-primary transition-colors">Prensa Francesa</h4>
+<span class="text-accent-gold text-sm">R$ 120,00</span>
+</div>
+</a>
+<!-- Product 4 -->
+<a class="group flex flex-col gap-3 hidden lg:flex" href="#">
+<div class="aspect-square w-full rounded-lg bg-surface-dark overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Saco de juta com grãos de café verde" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-wOENeThmmBnXZ1__hQqOSoI6IFPb72ZMJ9ZXOdd2fYElNuJbqqZORRgozxPEeRFtKVXcVuySbrJbVPkbG2vXRc3gEcqIvLoj6vndpOv7vCWq1cYAXfDftla634qxzJrC7XSgHmmBfO1ryfwjOEyXJfjWMpDxvVAw4SyvEIRz1nCOWoFVbTbPI1JxKMh98jFki82eG49wwpCulYf8Rs44adhmLgDDvFHaQUfhpDWIR_bh0LFoKLPgKpyX6u3kaHjdD-tpoULuyR-w');"></div>
+<div class="absolute bottom-2 right-2 size-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-primary text-sm">add_shopping_cart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h4 class="text-white font-bold group-hover:text-primary transition-colors">Grão Verde (Cru)</h4>
+<span class="text-accent-gold text-sm">R$ 55,00</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dark border-t border-border-brown py-12 px-4 md:px-10">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-10">
+<div class="flex flex-col gap-4 max-w-sm">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">coffee_maker</span>
+<span class="text-lg font-bold">Café Carlópolis</span>
+</div>
+<p class="text-accent-gold/70 text-sm leading-relaxed">
+                        Levando a tradição e o sabor do Norte Pioneiro do Paraná para a xícara de apaixonados por café em todo o Brasil.
+                    </p>
+</div>
+<div class="flex gap-16 flex-wrap">
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold">Loja</h4>
+<div class="flex flex-col gap-2 text-sm text-accent-gold/80">
+<a class="hover:text-primary" href="#">Cafés Especiais</a>
+<a class="hover:text-primary" href="#">Assinaturas</a>
+<a class="hover:text-primary" href="#">Kits e Presentes</a>
+<a class="hover:text-primary" href="#">Acessórios</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold">Institucional</h4>
+<div class="flex flex-col gap-2 text-sm text-accent-gold/80">
+<a class="hover:text-primary" href="#">Sobre Nós</a>
+<a class="hover:text-primary" href="#">Produtores</a>
+<a class="hover:text-primary" data-nav="1" href="contato.html">Contato</a>
+<a class="hover:text-primary" href="#">Política de Privacidade</a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto pt-8 mt-8 border-t border-border-brown/50 text-center text-xs text-accent-gold/50">
+<p>© 2024 Café Carlópolis. Todos os direitos reservados.</p>
+</div>
+</footer>
+</div>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const btn=document.getElementById("addToCartPremium");
+  if(!btn) return;
+  btn.addEventListener("click", function(){
+    window.CarlopolisCart.add({id:"premium", name:'Café Premium Carlópolis', price:65.0, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuAH52QpxOKkPfC7F6Q4q9HbIfbNTcYuk9VE2YeDmR9SdVAsS6dWIufDcaZkMiPd2jIJoYyHiuxG3t7yy2bTzmDkQQ7RKlfEczG7hJOZhOBEzi53uW4FrdE1_qotqpYoqdCf8OQGljZ0uX-zihF6JQUx4F2crsoOhzeyNod0-RjlSTt4LhPR12OoErixWh_TJFx_PEtcfxDtQ-mVubPHAfW_9fsgBeDjKY330pMJgLfI5yafhm3qJTk_xk9Fr2Bn4lpOnpZMBe_TcsOQ'}, 1);
+    window.location.href="carrinho.html";
+  });
+});
+</script>
+
+<script src="site.js" defer></script>
+</body></html>

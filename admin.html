@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Café Carlópolis - Admin</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-72 bg-white dark:bg-[#1a2234] border-r border-gray-200 dark:border-gray-800 flex flex-col hidden md:flex z-20 shadow-sm shrink-0">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 rounded-xl p-2 shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">coffee_maker</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-tight dark:text-white">Café Carlópolis</h1>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium">Painel Admin</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<div class="pt-4 pb-2 px-3">
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Gerenciamento</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-white dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined fill-current">inventory_2</span>
+<span class="text-sm font-bold">Produtos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="text-sm font-medium">Pedidos</span>
+<span class="ml-auto bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">8</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">web</span>
+<span class="text-sm font-medium">Conteúdo (CMS)</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">image</span>
+<span class="text-sm font-medium">Galeria de Imagens</span>
+</a>
+<div class="pt-4 pb-2 px-3">
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Sistema</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">Usuários</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Configurações</span>
+</a>
+</nav>
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of the administrator user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-CPhX1TpEsEInXZ7CGoQpCilK3fyeWcOqDmM_AVbIEBJ__gw1D9mcYtRZbrJLstqlLh5UoKRbzqkq1_z_PqFMxWrVXmBgQAdrzV1by-2MiaEYPERWtVlNMLecCdn7F7ZnxRrClsLSIITeeUyUISmeHVnQBVi1vQe-TmyDSof2_wZPf5pZDkrux35HdW5rfVTWfTjRizNFd1AJT3FW4lDsEyBkXfo7Ez9L1LzxF_Hb20GCfDy8RNCRrBS_jQyCOCDnq5gv77XDulw8');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold dark:text-white">Admin User</p>
+<p class="text-xs text-gray-500">admin@carlopolis.com</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center justify-between p-4 bg-white dark:bg-[#1a2234] border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">coffee_maker</span>
+<span class="font-bold text-lg dark:text-white">Café Carlópolis</span>
+</div>
+<button class="p-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12 scroll-smooth">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Page Heading & Actions -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-display font-black text-gray-900 dark:text-white tracking-tight">Gerenciar Produtos</h2>
+<p class="text-gray-500 dark:text-gray-400">Adicione, edite ou remova produtos do seu catálogo de cafés especiais.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+<span>Exportar</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:bg-blue-600 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Novo Produto</span>
+</button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-[#1a2234] rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Total de Vendas</p>
+<span class="material-symbols-outlined text-green-600 bg-green-100 dark:bg-green-900/30 p-1 rounded">trending_up</span>
+</div>
+<p class="text-2xl font-bold text-gray-900 dark:text-white">R$ 12.450</p>
+<p class="text-green-600 text-xs font-medium bg-green-50 dark:bg-green-900/20 self-start px-2 py-1 rounded">+5% este mês</p>
+</div>
+<div class="bg-white dark:bg-[#1a2234] rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Pedidos Pendentes</p>
+<span class="material-symbols-outlined text-primary bg-blue-100 dark:bg-blue-900/30 p-1 rounded">pending_actions</span>
+</div>
+<p class="text-2xl font-bold text-gray-900 dark:text-white">8</p>
+<p class="text-primary text-xs font-medium bg-blue-50 dark:bg-blue-900/20 self-start px-2 py-1 rounded">Requer atenção</p>
+</div>
+<div class="bg-white dark:bg-[#1a2234] rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Produtos Ativos</p>
+<span class="material-symbols-outlined text-purple-600 bg-purple-100 dark:bg-purple-900/30 p-1 rounded">inventory</span>
+</div>
+<p class="text-2xl font-bold text-gray-900 dark:text-white">42</p>
+<p class="text-purple-600 text-xs font-medium bg-purple-50 dark:bg-purple-900/20 self-start px-2 py-1 rounded">+3 novos</p>
+</div>
+<div class="bg-white dark:bg-[#1a2234] rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Estoque Baixo</p>
+<span class="material-symbols-outlined text-orange-600 bg-orange-100 dark:bg-orange-900/30 p-1 rounded">warning</span>
+</div>
+<p class="text-2xl font-bold text-gray-900 dark:text-white">3 itens</p>
+<p class="text-orange-600 text-xs font-medium bg-orange-50 dark:bg-orange-900/20 self-start px-2 py-1 rounded">-1% v.s. ontem</p>
+</div>
+</div>
+<!-- Products Table Section -->
+<div class="bg-white dark:bg-[#1a2234] border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-4">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Catálogo de Cafés</h3>
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-gray-400 text-[20px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Buscar produto..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-800/50 text-xs uppercase text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-800">
+<th class="px-6 py-4 font-semibold w-16">Item</th>
+<th class="px-6 py-4 font-semibold">Produto</th>
+<th class="px-6 py-4 font-semibold">Categoria</th>
+<th class="px-6 py-4 font-semibold">Preço</th>
+<th class="px-6 py-4 font-semibold">Estoque</th>
+<th class="px-6 py-4 font-semibold text-center">Status</th>
+<th class="px-6 py-4 font-semibold text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-gray-800 text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center bg-gray-100 border border-gray-200 dark:border-gray-700" data-alt="Package of gourmet coffee beans on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACg9wNVhf3iQU7srnLxpWTzGhh0X2oNEkyl5gDbpqj3HJDo3ViCvkS6jCuCm18JwR-BHtjUCMv5GUbHKJ2HwBypsXIsEp6OChvrXCH4KkPvfOyK4mZPzyAFWv1lFyZK4ilILXBSX4Fp7m0cU0UNp80-4h9ZDvGRztNOCYHb7VdjletsfOdbJOIxnyLFwSwei9jW_6eq5l_fThUgLDdMU0b6AIkIvhOb0V52TVA4KAvx7yCcsdtgAc8Rftmc-URqpfhG6-BEt-K9g7D');"></div>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Café Bourbon Amarelo - Torra Média</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Gourmet</td>
+<td class="px-6 py-4 text-gray-900 dark:text-white font-medium">R$ 45,00</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">120 un</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                                                Ativo
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1" title="Excluir">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center bg-gray-100 border border-gray-200 dark:border-gray-700" data-alt="Close up of dark roast coffee beans" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMAgl1vm47vMlibG59g477WpnAx2FjFiSamLtKQ15iOkMyQLxGo03SlyzpybTGXh2XI9_mp54oEAjSv_TXzoyIOzotaHneWCPkq7ZHhtU4SNqXda9SwHO_QIpGUpgIXNUi34Lu0fu-70ta8CdGbvxoLlA_W5Z5cHwpvAl2RU1_EOdI8g2lJ6Ybu-bVZSxCMmzLJFQKziOTTh-8yo_Jir8GQnvQ64_p9pFFbzNbawd9rR2vjxCVxXLvwx1JSn4fIuVWE7QMOBjvD3v_');"></div>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Espresso Blend Intenso</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Premium</td>
+<td class="px-6 py-4 text-gray-900 dark:text-white font-medium">R$ 60,00</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">40 un</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
+                                                Baixo Estoque
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1" title="Excluir">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center bg-gray-100 border border-gray-200 dark:border-gray-700" data-alt="Ceramic coffee cup with latte art" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOQtDIV4KAtPYPTwpCaLjt2SqHWe2DwX_LUxMXVum6bex4ufdyHhRfVNVKUmOK8b_FDo1IYq9o4CnT8k-LuP2XTAk8lkvTcQ9jLhdsvGdunqGTtS2LcRyfdqPkOjnOx7YynsmX5fbWJ46Gld3kdmPsdX65YfHxWtQZezxrFmlfFGCofEQMxo3a5mZug4dkH5BYGClpLqMnc9E5G9Gy-pTfai52sp0ZsOVW55pMx4jomsrreseHaeGtWUMvy6Nr2f2VGJyyxEOL3CCr');"></div>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Kit Degustação Completo</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Kits</td>
+<td class="px-6 py-4 text-gray-900 dark:text-white font-medium">R$ 89,90</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">15 un</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                                                Ativo
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1" title="Excluir">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center bg-gray-100 border border-gray-200 dark:border-gray-700" data-alt="Coffee being poured from a glass pot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8qb8kc6QFdHhXQ0La3aKE-bIcTOjTcdMzEtL3cu-fUAg1Vx3WZqDNZaXMAA_Q9evOPxgKvfwVYhlIifcHv8qBiwGJmxSQBRIdvBHnZn-YRhOdYZ_s0DLKDYrFwAoX-tC9Ybxph4ZIs98rMzNgLF3QG-iYCOC7mUtkFHqqNzHa9R9DatrSOnlQZEPswgHF0T2GIu7kVEbEIGdmu1WGHB89K61Zow1nP6aFI7O_1APJvleEjd1qz53gxdVUsM7xFci2_T4ddIuoQcWo');"></div>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Caneca Cerâmica Artesanal</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Acessórios</td>
+<td class="px-6 py-4 text-gray-900 dark:text-white font-medium">R$ 35,00</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">0 un</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">
+                                                Esgotado
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-gray-400 hover:text-red-500 transition-colors p-1" title="Excluir">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
+<span class="text-sm text-gray-500 dark:text-gray-400">Mostrando 4 de 42 resultados</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-sm border border-gray-200 dark:border-gray-700 rounded hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-white transition-colors disabled:opacity-50" disabled="">Anterior</button>
+<button class="px-3 py-1 text-sm border border-gray-200 dark:border-gray-700 rounded hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-white transition-colors">Próximo</button>
+</div>
+</div>
+</div>
+<!-- CMS / Page Editing Section -->
+<div class="pt-8">
+<div class="flex items-center gap-2 mb-6">
+<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">Edição Rápida: Home Page</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-blue-100 text-primary dark:bg-blue-900/30 dark:text-blue-200">CMS</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Hero Banner Editor -->
+<div class="lg:col-span-2 bg-white dark:bg-[#1a2234] border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm p-6">
+<h3 class="text-lg font-semibold mb-4 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400">view_carousel</span>
+                                    Banner Principal
+                                </h3>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Título do Banner</label>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white text-sm focus:ring-primary focus:border-primary" type="text" value="Sabor Autêntico em Cada Xícara"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subtítulo / Descrição</label>
+<textarea class="w-full rounded-lg border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white text-sm focus:ring-primary focus:border-primary" rows="3">Os melhores grãos selecionados do interior do Paraná diretamente para sua casa.</textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Imagem de Fundo</label>
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col items-center justify-center w-full h-48 border-2 border-gray-300 dark:border-gray-700 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors relative overflow-hidden group" for="dropzone-file">
+<div class="flex flex-col items-center justify-center pt-5 pb-6 z-10">
+<span class="material-symbols-outlined text-gray-400 text-4xl mb-2 group-hover:text-primary transition-colors">cloud_upload</span>
+<p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Clique para enviar</span> ou arraste</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG ou GIF (MAX. 2MB)</p>
+</div>
+<!-- Preview Background (Simulated) -->
+<div class="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-20 transition-opacity" data-alt="Blurry background preview of a coffee shop interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPr1NHbsci8eEiS0ywUtO-M2GxrOcWSs53DQcJ7aEAlx8LfNMUZ0VgMwTXBVJfoyikmEu20HmOA8jQRWNMWTfywJ9SKUERA9DSHC5o5gmobzZ3QdKaotG2IbGHQmcSjGwq5ZZiF3lLj6RRAMOKIqSk_AzvMiYSlKWNwhjU0b8aO7C5Lax0L3QszmZZKB2wksJTgymN_NafL9V_dpDmeKp589FgGwhXOi_bpB15LZ74lBTIKg4TCrH8CRcfuBPK-bty-nqSZ6rdLEKj');"></div>
+</label>
+<input class="hidden" id="dropzone-file" type="file"/>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Salvar Alterações</button>
+</div>
+</div>
+<!-- Featured Products Selector -->
+<div class="bg-white dark:bg-[#1a2234] border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm p-6">
+<h3 class="text-lg font-semibold mb-4 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400">star</span>
+                                    Destaques
+                                </h3>
+<div class="space-y-3">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-2">Selecione os produtos que aparecem na vitrine inicial.</p>
+<label class="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<input checked="" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Café Bourbon Amarelo</p>
+<p class="text-xs text-gray-500">R$ 45,00</p>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<input checked="" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Espresso Blend</p>
+<p class="text-xs text-gray-500">R$ 60,00</p>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<input class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary dark:bg-gray-700 dark:border-gray-600" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Kit Degustação</p>
+<p class="text-xs text-gray-500">R$ 89,90</p>
+</div>
+</label>
+<button class="w-full mt-4 text-primary text-sm font-medium hover:underline flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span>
+                                        Adicionar à lista
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
+<p class="text-sm text-gray-400">© 2023 Café Carlópolis. Todos os direitos reservados.</p>
+</footer>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+<script src="site.js" defer></script>
+</body></html>

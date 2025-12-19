@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fale Conosco - Café Carlópolis</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #d46211;
+            border-radius: 20px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-gray-900 dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-300">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-6 py-4">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- Brand -->
+<a class="flex items-center gap-3 text-gray-900 dark:text-white hover:opacity-80 transition-opacity" href="#">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Café Carlópolis</h2>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Produtos</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Assinatura</a>
+<a class="text-sm font-bold text-primary" href="#">Fale Conosco</a>
+</nav>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden lg:flex w-64 items-center bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden h-10 ring-1 ring-transparent focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined px-3 text-gray-500">search</span>
+<input class="w-full bg-transparent border-none text-sm placeholder-gray-500 focus:ring-0 text-gray-900 dark:text-gray-100" placeholder="Buscar cafés..."/>
+</div>
+<!-- Icons -->
+<div class="flex gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-gray-100">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-gray-100">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="flex-grow">
+<div class="layout-container flex flex-col items-center py-10 px-4 md:px-10 lg:px-20">
+<div class="w-full max-w-[1120px]">
+<!-- Page Heading -->
+<div class="flex flex-col gap-4 py-6 mb-8 text-center md:text-left border-b border-gray-200 dark:border-gray-800">
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">Fale Conosco</h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+                        Tem alguma dúvida sobre nossos cafés ou precisa de ajuda com seu pedido? Estamos aqui para ouvir você.
+                    </p>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Contact Info & Map -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Contact Details Cards -->
+<div class="flex flex-col gap-4">
+<h2 class="text-2xl font-bold mb-2">Canais de Atendimento</h2>
+<!-- Phone -->
+<div class="flex items-start gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 hover:border-primary/50 transition-colors group">
+<div class="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Telefone &amp; WhatsApp</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Segunda a Sexta, 8h às 18h</p>
+<a class="text-primary font-medium hover:underline" href="tel:+5543999999999">(43) 99999-9999</a>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 hover:border-primary/50 transition-colors group">
+<div class="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">E-mail</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Respondemos em até 24h</p>
+<a class="text-primary font-medium hover:underline" href="mailto:contato@cafecarlopolis.com.br">contato@cafecarlopolis.com.br</a>
+</div>
+</div>
+<!-- Address -->
+<div class="flex items-start gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 hover:border-primary/50 transition-colors group">
+<div class="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Endereço</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Rua do Café, 123<br/>
+                                        Carlópolis - PR<br/>
+                                        CEP: 86420-000
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="w-full h-64 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 relative group">
+<!-- Placeholder Image for Map -->
+<img alt="Map showing the location of Café Carlópolis in Brazil with street details" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-location="Carlópolis, Brazil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgWk26l9f8wZGFXiHjXh6Yc6sUtx2M_bTi_GFTZ93cbQaimNrwAZ412w6v1QZjg9QmHm4bA2GR_zm-WYTcsEBDmacrz1HasTLJwclHkqzX65p6qkcaUSz7u4SlsTjIkQesxaNAHUcamdu_99hb1REE66MUPQiQawvhcVU-lDLLwYBnSuWVHmSAB6plkfcAdGBYDSs69lYwxnp1FDx4Qm_kbMUtW45WkYWNKVEYKDQcOEraosrXcP8tW8ZVWLPUbFByNslpFF61uTX"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-transparent transition-colors pointer-events-none">
+<button class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm pointer-events-auto hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">map</span>
+                                    Ver no Google Maps
+                                </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="lg:col-span-7">
+<div class="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                                Envie uma mensagem
+                            </h2>
+<form class="flex flex-col gap-6">
+<!-- Name & Email Row -->
+<div class="flex flex-col md:flex-row gap-6">
+<label class="flex flex-col flex-1">
+<span class="text-gray-900 dark:text-gray-100 font-medium mb-2">Nome Completo</span>
+<input class="w-full h-12 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors" placeholder="Seu nome" type="text"/>
+</label>
+<label class="flex flex-col flex-1">
+<span class="text-gray-900 dark:text-gray-100 font-medium mb-2">E-mail</span>
+<input class="w-full h-12 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors" placeholder="seu@email.com" type="email"/>
+</label>
+</div>
+<!-- Subject -->
+<label class="flex flex-col w-full">
+<span class="text-gray-900 dark:text-gray-100 font-medium mb-2">Assunto</span>
+<div class="relative">
+<input class="w-full h-12 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors pr-10" list="subjects" placeholder="Ex: Dúvida sobre entrega" type="text"/>
+<datalist id="subjects">
+<option value="Dúvida sobre produtos">
+</option><option value="Status do pedido">
+</option><option value="Assinatura de café">
+</option><option value="Parcerias e B2B">
+</option><option value="Outros">
+</option></datalist>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</label>
+<!-- Message -->
+<label class="flex flex-col w-full">
+<span class="text-gray-900 dark:text-gray-100 font-medium mb-2">Mensagem</span>
+<textarea class="w-full min-h-[160px] resize-y rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500 p-4 transition-colors" placeholder="Olá, gostaria de saber mais sobre..."></textarea>
+</label>
+<!-- Checkbox -->
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary bg-gray-50 dark:bg-gray-900" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">Concordo em receber comunicações do Café Carlópolis.</span>
+</label>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full md:w-auto px-8 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg shadow-primary/20 transform active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                                        Enviar Mensagem
+                                    </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="border-t border-gray-200 dark:border-gray-800 py-10 bg-white dark:bg-gray-900 mt-auto">
+<div class="max-w-[1280px] mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Café Carlópolis. Todos os direitos reservados.</p>
+<div class="flex gap-4 justify-center md:justify-start">
+<a class="text-sm text-gray-400 hover:text-primary transition-colors" href="#">Política de Privacidade</a>
+<a class="text-sm text-gray-400 hover:text-primary transition-colors" href="#">Termos de Uso</a>
+</div>
+</div>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><i class="fa-brands fa-instagram text-xl"></i></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><i class="fa-brands fa-facebook text-xl"></i></a>
+</div>
+</div>
+</footer>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+<script src="site.js" defer></script>
+</body></html>
