@@ -28,31 +28,33 @@
     </script>
 
 
-<style id="cafe-marrom-style">
-/* Fundo café elegante + painéis marrom-claro (#f3e4d1) */
-:root {
-  --painel-bg: #f3e4d1;
-  --painel-text: #3a2a18;
+<style id="fundo-cafe-elegante">
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:url('https://chb.com.br/storage/blog/206051.jpg') center/cover no-repeat;
+  opacity:.14;filter:saturate(1.1) contrast(1.05);
+  z-index:-2;
 }
-body {
-  background-image: url('https://chb.com.br/storage/blog/206051.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: rgba(0,0,0,0.6);
-  background-blend-mode: multiply;
+body::after{
+  content:"";position:fixed;inset:0;
+  background:rgba(0,0,0,0.22);z-index:-1;
 }
-.container, .card, .section, .resumo-pedido, .checkout-box, .cart-summary, .cart-box {
-  background-color: var(--painel-bg) !important;
-  color: var(--painel-text) !important;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+.section, .card, .container, .resumo, .box, .painel, .area, .bloco, .checkout-box, .cart-summary, .cart-box {
+  background:rgba(243,228,209,0.88)!important;
+  color:#3a2a18!important;
+  backdrop-filter:blur(2px);
+  border-radius:12px;
 }
-button, .btn {
-  border-radius: 8px;
-  font-weight: 600;
+.social-links a{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(58,42,24,0.9);
+  color:#f3e4d1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;text-decoration:none;
+  transition:all .25s ease;
 }
+.social-links a:hover{background:#c58a3c;transform:translateY(-2px);}
 </style>
 
 </head>
