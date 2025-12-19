@@ -1,442 +1,196 @@
 <!DOCTYPE html>
-
-<html class="light" lang="pt-BR"><head>
+<html class="dark" lang="pt-BR">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Checkout - Café Carlópolis</title>
-<!-- Google Fonts: Manrope -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<base href="../">
+<title>Checkout | Café Carlópolis</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#137fec",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101922",
-              "surface-light": "#ffffff",
-              "surface-dark": "#1a2632",
-            },
-            fontFamily: {
-              "display": ["Manrope", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#d47311",
+        "background-light": "#f8f7f6",
+        "background-dark": "#221910",
+        "surface-dark": "#332619",
+        "border-dark": "#483623",
+        "text-muted": "#c9ad92"
+      },
+      fontFamily: {
+        display: ["Work Sans", "sans-serif"],
+        body: ["Work Sans", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
       }
-    </script>
-<style>
-        /* Custom styles if absolutely needed, though Tailwind covers most */
-        body { font-family: 'Manrope', sans-serif; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
-
-
-<style id="fundo-cafe-elegante">
-body::before{
-  content:"";
-  position:fixed;inset:0;
-  background:url('https://chb.com.br/storage/blog/206051.jpg') center/cover no-repeat;
-  opacity:.14;filter:saturate(1.1) contrast(1.05);
-  z-index:-2;
+    }
+  }
 }
-body::after{
-  content:"";position:fixed;inset:0;
-  background:rgba(0,0,0,0.22);z-index:-1;
-}
-.section, .card, .container, .resumo, .box, .painel, .area, .bloco, .checkout-box, .cart-summary, .cart-box {
-  background:rgba(243,228,209,0.88)!important;
-  color:#3a2a18!important;
-  backdrop-filter:blur(2px);
-  border-radius:12px;
-}
-.social-links a{
-  width:42px;height:42px;border-radius:50%;
-  background:rgba(58,42,24,0.9);
-  color:#f3e4d1;
-  display:flex;align-items:center;justify-content:center;
-  font-size:18px;text-decoration:none;
-  transition:all .25s ease;
-}
-.social-links a:hover{background:#c58a3c;transform:translateY(-2px);}
+</script><style>
+  body{ font-family:"Work Sans",sans-serif; }
+  .material-symbols-outlined{ font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24; }
+  .material-symbols-outlined.fill{ font-variation-settings:'FILL' 1,'wght' 600,'GRAD' 0,'opsz' 24; }
 </style>
-
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased min-h-screen flex flex-col font-display">
-<!-- Header -->
-<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
-  <div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap">
-    <a href="index.html" class="flex items-center gap-4 text-white">
-      <div class="flex size-8 items-center justify-center text-primary">
-        <span class="material-symbols-outlined text-3xl">coffee_maker</span>
-      </div>
-      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+<body class="bg-background-dark text-white antialiased min-h-screen">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
+    <a href="./" class="flex items-center gap-3 text-white">
+      <span class="material-symbols-outlined text-primary text-3xl">coffee_maker</span>
+      <span class="text-xl font-bold tracking-[-0.015em]">Café Carlópolis</span>
     </a>
 
-    <div class="hidden flex-1 justify-end gap-8 md:flex">
-      <nav class="flex items-center gap-9" aria-label="Navegação principal">
-        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
-        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
-        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
-        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a>
-        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a>
-      </nav>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="./">Início</a>
+      <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="produto-gourmet/">Loja</a>
+      <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="./#historia">Nossa História</a>
+      <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contato/">Contato</a>
+      <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="faq/">FAQ</a>
+    </nav>
 
-      <div class="flex items-center gap-2">
-        <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
-           href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
-          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-          <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
-        </a>
-
-        <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-black gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-4 hover:opacity-90 transition-opacity"
-           href="login.html" data-nav="1">
-          <span class="truncate">Login</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="flex md:hidden items-center gap-2">
-      <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
-         href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+    <div class="hidden md:flex items-center gap-2">
+      <a href="carrinho/" class="relative flex h-10 items-center justify-center rounded-lg bg-surface-dark border border-border-dark px-4 text-white hover:bg-border-dark transition-colors">
         <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-        <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+        <span class="ml-2 text-sm font-bold">Carrinho</span>
+        <span data-cart-count class="absolute -top-2 -right-2 min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-white text-[11px] font-black flex items-center justify-center">0</span>
       </a>
-
-      <button class="text-white flex items-center justify-center rounded-xl h-10 w-10 bg-surface-dark hover:bg-border-dark transition-colors"
-              aria-label="Menu" data-mobile-toggle="1">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+      <a href="login/" class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-white text-sm font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-900/20">
+        <span class="truncate">Entrar</span>
+      </a>
     </div>
+
+    <button id="ccMobileBtn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Abrir menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </div>
 
-  <div class="mx-auto max-w-7xl px-2 pt-3 hidden md:hidden" data-mobile-menu>
-    <div class="rounded-2xl border border-border-dark bg-[#0f1115] p-3 flex flex-col gap-2">
-      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html">Início</a>
-      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
-      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
-      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="faq.html">FAQ</a>
-      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="contato.html">Contato</a>
-      <a class="px-3 py-2 rounded-xl bg-primary text-black font-bold hover:opacity-90 transition-opacity" data-nav="1" href="login.html">Login</a>
+  <!-- Mobile menu -->
+  <div id="ccMobileMenu" class="md:hidden hidden border-t border-border-dark bg-background-dark">
+    <div class="px-4 py-4 flex flex-col gap-3">
+      <a class="text-white text-sm font-semibold hover:text-primary" href="./">Início</a>
+      <a class="text-white text-sm font-semibold hover:text-primary" href="produto-gourmet/">Loja</a>
+      <a class="text-white text-sm font-semibold hover:text-primary" href="./#historia">Nossa História</a>
+      <a class="text-white text-sm font-semibold hover:text-primary" href="contato/">Contato</a>
+      <a class="text-white text-sm font-semibold hover:text-primary" href="faq/">FAQ</a>
+      <div class="pt-2 flex gap-2">
+        <a href="carrinho/" class="flex-1 flex h-11 items-center justify-center rounded-lg bg-surface-dark border border-border-dark text-white hover:bg-border-dark transition-colors">
+          <span class="material-symbols-outlined text-[20px] mr-2">shopping_bag</span> Carrinho
+        </a>
+        <a href="login/" class="flex-1 flex h-11 items-center justify-center rounded-lg bg-primary text-white font-bold hover:bg-orange-600 transition-colors">
+          Entrar
+        </a>
+      </div>
     </div>
   </div>
 </header>
-<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
-  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
-    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+<main class="flex-1">
+  <div class="mx-auto max-w-7xl px-4 py-10 lg:px-8">
+    
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+  <div class="lg:col-span-2 rounded-2xl border border-border-dark bg-surface-dark overflow-hidden">
+    <div class="px-6 py-5 border-b border-border-dark">
+      <h1 class="text-2xl font-black">Checkout</h1>
+      <p class="text-text-muted text-sm mt-1">Preencha os dados para finalizar (protótipo).</p>
+    </div>
+
+    <form id="ccCheckoutForm" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <label class="md:col-span-2 text-sm font-bold">
+        Nome completo
+        <input name="name" required class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="Seu nome" />
+      </label>
+
+      <label class="md:col-span-2 text-sm font-bold">
+        E-mail
+        <input name="email" required type="email" class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="voce@email.com" />
+      </label>
+
+      <label class="md:col-span-2 text-sm font-bold">
+        Endereço
+        <input name="address" required class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="Rua, número, bairro" />
+      </label>
+
+      <label class="text-sm font-bold">
+        Cidade
+        <input name="city" required class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="Cidade" />
+      </label>
+
+      <label class="text-sm font-bold">
+        UF
+        <input name="uf" required maxlength="2" class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="SP" />
+      </label>
+
+      <label class="text-sm font-bold">
+        CEP
+        <input name="cep" required class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="00000-000" />
+      </label>
+
+      <label class="text-sm font-bold">
+        Envio
+        <select name="shipping" class="mt-2 w-full h-12 rounded-lg bg-background-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary">
+          <option value="Sedex">Sedex Expresso (2–4 dias)</option>
+          <option value="PAC">PAC (5–9 dias)</option>
+        </select>
+      </label>
+
+      <div class="md:col-span-2 mt-2 rounded-xl border border-border-dark bg-background-dark p-4">
+        <p class="text-sm font-black">Pagamento (simulado)</p>
+        <p class="text-text-muted text-sm mt-1">No protótipo, qualquer cartão finaliza.</p>
+
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <input name="card" required class="h-11 rounded-lg bg-surface-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="Número do cartão" />
+          <input name="exp" required class="h-11 rounded-lg bg-surface-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="MM/AA" />
+          <input name="cvv" required class="h-11 rounded-lg bg-surface-dark border border-border-dark text-white px-4 focus:outline-none focus:border-primary" placeholder="CVV" />
+        </div>
+      </div>
+
+      <div class="md:col-span-2 mt-2 flex gap-3">
+        <button type="submit" class="flex-1 h-12 rounded-lg bg-primary text-white font-black hover:bg-orange-600 transition-colors">
+          Finalizar pedido
+        </button>
+        <a href="carrinho/" class="flex-1 h-12 rounded-lg bg-background-dark border border-border-dark text-white font-black flex items-center justify-center hover:bg-border-dark transition-colors">
+          Voltar ao carrinho
+        </a>
+      </div>
+    </form>
   </div>
+
+  <aside class="rounded-2xl border border-border-dark bg-surface-dark overflow-hidden sticky top-24">
+    <div class="px-6 py-5 border-b border-border-dark">
+      <h2 class="text-lg font-black">Resumo</h2>
+    </div>
+    <div class="p-6 flex flex-col gap-4">
+      <div id="ccCheckoutItems" class="flex flex-col gap-3"></div>
+      <div class="border-t border-border-dark pt-4 flex flex-col gap-2 text-sm">
+        <div class="flex justify-between"><span class="text-text-muted">Subtotal</span><span id="ccSub">R$ 0,00</span></div>
+        <div class="flex justify-between"><span class="text-text-muted">Frete</span><span id="ccFrete">R$ 15,00</span></div>
+        <div class="flex justify-between"><span class="text-text-muted">Desconto</span><span id="ccDesc">R$ 0,00</span></div>
+        <div class="border-t border-border-dark pt-3 flex justify-between text-base font-black">
+          <span>Total</span><span id="ccTotal">R$ 0,00</span>
+        </div>
+      </div>
+    </div>
+  </aside>
 </div>
 
-<!-- Main Content -->
-<main class="flex-grow py-8 px-4 sm:px-6 lg:px-8">
-<div class="mx-auto max-w-7xl">
-<!-- Breadcrumbs / Stepper -->
-<nav class="mb-8 flex items-center text-sm font-medium text-slate-500 dark:text-slate-400">
-<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-lg">shopping_cart</span> Carrinho
-                </a>
-<span class="mx-3 text-slate-300 dark:text-slate-600">/</span>
-<span class="flex items-center gap-1 text-primary">
-<span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] text-white">2</span>
-                    Identificação &amp; Entrega
-                </span>
-<span class="mx-3 text-slate-300 dark:text-slate-600">/</span>
-<span class="flex items-center gap-1">
-<span class="flex h-5 w-5 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-[10px]">3</span>
-                    Pagamento
-                </span>
-</nav>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-<!-- Left Column: Forms -->
-<div class="lg:col-span-7 space-y-8">
-<!-- Section: Contact Info -->
-<section class="rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
-<div class="mb-6 flex items-center justify-between">
-<h2 class="text-xl font-bold text-slate-900 dark:text-white">Dados de Contato</h2>
-<button class="text-sm font-medium text-primary hover:underline">Já tem uma conta?</button>
-</div>
-<div class="grid gap-4">
-<label class="block">
-<span class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</span>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="seu@email.com" type="email"/>
-</label>
-<label class="flex items-center gap-3">
-<input checked="" class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-900" type="checkbox"/>
-<span class="text-sm text-slate-600 dark:text-slate-400">Quero receber ofertas e novidades do Café Carlópolis.</span>
-</label>
-</div>
-</section>
-<!-- Section: Shipping Address -->
-<section class="rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
-<h2 class="mb-6 text-xl font-bold text-slate-900 dark:text-white">Endereço de Entrega</h2>
-<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-<div class="md:col-span-2">
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Nome Completo</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="Ex: João Silva" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">CEP</label>
-<div class="relative">
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="00000-000" type="text"/>
-<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 text-xl">search</span>
-</div>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Telefone / Celular</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="(00) 00000-0000" type="tel"/>
-</div>
-<div class="md:col-span-2">
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Endereço</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="Rua, Avenida, etc." type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Número</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="123" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Complemento (Opcional)</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="Apto, Bloco, etc." type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Cidade</label>
-<input class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Estado</label>
-<select class="w-full rounded-lg border-slate-300 bg-white dark:bg-slate-900 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white">
-<option>Selecione</option>
-<option>SP</option>
-<option>RJ</option>
-<option>MG</option>
-<option>PR</option>
-<!-- Add other states -->
-</select>
-</div>
-</div>
-</section>
-<!-- Section: Shipping Method -->
-<section class="rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
-<h2 class="mb-6 text-xl font-bold text-slate-900 dark:text-white">Opções de Envio</h2>
-<div class="space-y-4">
-<!-- Option 1: Selected -->
-<label class="relative flex cursor-pointer rounded-lg border-2 border-primary bg-primary/5 p-4 shadow-sm transition-all dark:bg-primary/10">
-<input checked="" class="sr-only" name="shipping" type="radio"/>
-<div class="flex w-full items-center justify-between">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
-<div>
-<p class="font-bold text-slate-900 dark:text-white">Entrega Expressa</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">1 a 2 dias úteis</p>
-</div>
-</div>
-<span class="font-bold text-primary">R$ 15,90</span>
-</div>
-<div class="absolute -right-1 -top-1">
-<span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white">
-<span class="material-symbols-outlined text-xs font-bold">check</span>
-</span>
-</div>
-</label>
-<!-- Option 2: Default -->
-<label class="relative flex cursor-pointer rounded-lg border border-slate-200 p-4 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600 transition-all">
-<input class="sr-only" name="shipping" type="radio"/>
-<div class="flex w-full items-center justify-between">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-slate-400 text-3xl">package_2</span>
-<div>
-<p class="font-bold text-slate-900 dark:text-white">Entrega Padrão</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">4 a 7 dias úteis</p>
-</div>
-</div>
-<span class="font-bold text-slate-700 dark:text-slate-300">Grátis</span>
-</div>
-</label>
-</div>
-</section>
-<!-- Section: Payment -->
-<section class="rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
-<h2 class="mb-6 text-xl font-bold text-slate-900 dark:text-white">Pagamento</h2>
-<!-- Payment Tabs/Accordion -->
-<div class="space-y-4">
-<!-- Credit Card (Active) -->
-<div class="rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
-<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-4 border-b border-slate-200 dark:border-slate-700">
-<input checked="" class="text-primary focus:ring-primary h-4 w-4" id="cc" name="payment_method" type="radio"/>
-<label class="flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer w-full" for="cc">
-<span class="material-symbols-outlined">credit_card</span> Cartão de Crédito
-                                    </label>
-<div class="flex gap-1 opacity-60">
-<!-- Mock card icons using simple spans/colors for visual rep -->
-<div class="h-5 w-8 rounded bg-red-500"></div>
-<div class="h-5 w-8 rounded bg-yellow-500"></div>
-<div class="h-5 w-8 rounded bg-blue-500"></div>
-</div>
-</div>
-<div class="p-4 sm:p-6 bg-white dark:bg-slate-900 grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="md:col-span-2">
-<label class="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500">Número do Cartão</label>
-<div class="relative">
-<input class="w-full rounded-lg border-slate-300 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 px-4 py-3 pl-10 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="0000 0000 0000 0000" type="text"/>
-<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400">credit_card</span>
-</div>
-</div>
-<div class="md:col-span-2">
-<label class="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500">Nome no Cartão</label>
-<input class="w-full rounded-lg border-slate-300 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="Como impresso no cartão" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500">Validade</label>
-<input class="w-full rounded-lg border-slate-300 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="MM/AA" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500">CVV</label>
-<div class="relative">
-<input class="w-full rounded-lg border-slate-300 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="123" type="text"/>
-<span class="material-symbols-outlined absolute right-3 top-3 cursor-pointer text-slate-400 text-lg hover:text-slate-600">help</span>
-</div>
-</div>
-</div>
-</div>
-<!-- PIX (Inactive) -->
-<div class="rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden opacity-80 hover:opacity-100">
-<div class="flex items-center gap-3 bg-white dark:bg-slate-900 p-4">
-<input class="text-primary focus:ring-primary h-4 w-4" id="pix" name="payment_method" type="radio"/>
-<label class="flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer" for="pix">
-<span class="material-symbols-outlined rotate-45">qr_code_2</span> PIX <span class="ml-2 text-xs font-normal text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-0.5 rounded">-5% OFF</span>
-</label>
-</div>
-</div>
-<!-- Boleto (Inactive) -->
-<div class="rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden opacity-80 hover:opacity-100">
-<div class="flex items-center gap-3 bg-white dark:bg-slate-900 p-4">
-<input class="text-primary focus:ring-primary h-4 w-4" id="boleto" name="payment_method" type="radio"/>
-<label class="flex items-center gap-2 font-bold text-slate-900 dark:text-white cursor-pointer" for="boleto">
-<span class="material-symbols-outlined">receipt_long</span> Boleto Bancário
-                                    </label>
-</div>
-</div>
-</div>
-</section>
-<!-- Navigation Buttons (Mobile/Bottom) -->
-<div class="flex items-center justify-between pt-6 lg:hidden">
-<a class="flex items-center gap-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium" href="#">
-<span class="material-symbols-outlined">arrow_back</span> Voltar
-                        </a>
-<button class="rounded-lg bg-primary px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transition-all" id="placeOrder">Finalizar Pedido</button>
-</div>
-</div>
-<!-- Right Column: Order Summary (Sticky) -->
-<div class="lg:col-span-5 relative">
-<div class="sticky top-24 space-y-6">
-<!-- Cart Card -->
-<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-6 shadow-lg">
-<h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Resumo do Pedido</h3>
-<!-- Products -->
-<div class="mb-6 space-y-4 divide-y divide-slate-100 dark:divide-slate-700/50">
-<div class="flex gap-4 pt-4 first:pt-0">
-<div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-<img alt="Café Especial" class="h-full w-full object-cover" data-alt="A bag of premium coffee beans on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_v0ydC8VlTLSORBkRNe6HMJY2YfvWh7C_OCb4D5h-BQpJiz9j0WJNEWB7FR5DSK4YYTi-j9t8GEToPZZ4qPsArmYM3GymLA8vC3YF1iFeb66eg0i1MOaUTCJUP0kNA74NrHvucF77o9ejAOO8CZ2iS89Yza1Nzsb9crM3CRxyn3ug93ZfJ7H7-Jto9mZZ2DfvhV4G6ZzUCb_madRiXDCr_QOrkfhIn7-YhqdeDmn_cxHJlqaJHr3NnMJ2vgH4h5yW4lNZuHiGKp8n"/>
-</div>
-<div class="flex flex-1 flex-col">
-<div class="flex justify-between">
-<h4 class="font-bold text-slate-900 dark:text-white text-sm">Café Gourmet Carlópolis</h4>
-<p class="font-bold text-slate-900 dark:text-white text-sm">R$ 45,00</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Moído, 500g</p>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-xs text-slate-500 dark:text-slate-400">Qtd: 1</span>
-<button class="text-xs font-medium text-primary hover:text-blue-700">Editar</button>
-</div>
-</div>
-</div>
-<div class="flex gap-4 pt-4">
-<div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-<img alt="Blend Intenso" class="h-full w-full object-cover" data-alt="Close up of a dark roast coffee bag label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd6NrqO-sGzMcV040Vak8AjD9PFgwFf_FPF3BCtxUuWQDDDUG3FIdR1fV5nGSJQN2vDwuIWKTo-fYKNKxDe4BJOaFafiEbZ6eXrp2xN9oCgxy0OfvJOAhOUSqnP2qpoJJybF7rhF3SLf_dIaahiXRQ-jE4IPBoE-hPe6X-KNhuw4EhdDn4T-hthLVDzC2QMjCMBtyXEPxQHZb1kLhQWP8qjCj1-_fZ8jxRMKUu9aCLc5Es8Cjyn_LbCOsFntQvmmA9UsZeUAuBSokn"/>
-</div>
-<div class="flex flex-1 flex-col">
-<div class="flex justify-between">
-<h4 class="font-bold text-slate-900 dark:text-white text-sm">Blend Intenso Torra Escura</h4>
-<p class="font-bold text-slate-900 dark:text-white text-sm">R$ 38,90</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Grão, 250g</p>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-xs text-slate-500 dark:text-slate-400">Qtd: 2</span>
-<button class="text-xs font-medium text-primary hover:text-blue-700">Editar</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Discount Code -->
-<div class="mb-6 flex gap-2">
-<input class="flex-1 rounded-lg border-slate-300 bg-slate-50 dark:bg-slate-900 dark:border-slate-700 px-3 py-2 text-sm focus:border-primary focus:ring-primary dark:text-white" placeholder="Cupom de desconto" type="text"/>
-<button class="rounded-lg bg-slate-200 dark:bg-slate-700 px-4 py-2 text-sm font-bold text-slate-700 dark:text-white hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">Aplicar</button>
-</div>
-<!-- Calculations -->
-<div class="space-y-3 border-t border-slate-100 dark:border-slate-700 pt-4 text-sm text-slate-600 dark:text-slate-400">
-<div class="flex justify-between">
-<span>Subtotal</span>
-<span class="font-medium text-slate-900 dark:text-white">R$ 122,80</span>
-</div>
-<div class="flex justify-between">
-<span>Envio (Expressa)</span>
-<span class="font-medium text-slate-900 dark:text-white">R$ 15,90</span>
-</div>
-<div class="flex justify-between text-green-600 dark:text-green-400">
-<span>Descontos</span>
-<span>- R$ 0,00</span>
-</div>
-<div class="flex justify-between border-t border-slate-200 dark:border-slate-700 pt-4 text-lg font-bold text-slate-900 dark:text-white">
-<span>Total</span>
-<span>R$ 138,70</span>
-</div>
-</div>
-<!-- Desktop Action Button -->
-<div class="mt-8 hidden lg:block space-y-4">
-<button class="w-full rounded-lg bg-primary py-4 text-base font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transition-all transform active:scale-[0.98]">
-                                    Finalizar Pedido
-                                </button>
-<div class="text-center">
-<a class="text-sm font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200" href="#">Voltar para o carrinho</a>
-</div>
-</div>
-</div>
-<!-- Trust Signals -->
-<div class="flex justify-center gap-6 text-slate-400 grayscale opacity-70">
-<div class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-2xl">verified_user</span>
-<span class="text-[10px] uppercase font-bold tracking-wider">Site Seguro</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-2xl">local_shipping</span>
-<span class="text-[10px] uppercase font-bold tracking-wider">Entrega Garantida</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-2xl">support_agent</span>
-<span class="text-[10px] uppercase font-bold tracking-wider">Suporte 24h</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => window.CC?.pages?.checkout?.init?.());
+</script>
+
+  </div>
 </main>
-<footer class="bg-[#150f09] text-white pt-16 pb-8 border-t border-border-dark">
+<footer class="bg-[#150f09] text-white pt-14 pb-8 border-t border-border-dark">
   <div class="mx-auto max-w-7xl px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div class="flex flex-col gap-4">
@@ -445,145 +199,45 @@ body::after{
           <h3 class="text-lg font-bold">Café Carlópolis</h3>
         </div>
         <p class="text-text-muted text-sm leading-relaxed">
-          Levando o sabor autêntico do Norte Pioneiro do Paraná até a sua casa. Qualidade, tradição e amor pelo café em cada grão.
+          Levando o sabor autêntico do Norte Pioneiro para a sua casa. Qualidade, tradição e amor pelo café em cada grão.
         </p>
       </div>
 
       <div class="flex flex-col gap-4">
         <h4 class="text-white font-bold">Navegação</h4>
         <ul class="flex flex-col gap-2 text-text-muted text-sm">
-          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a></li>
-          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a></li>
-          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a></li>
-          <li><a class="hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a></li>
-          <li><a class="hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./">Início</a></li>
+          <li><a class="hover:text-primary transition-colors" href="produto-gourmet/">Loja</a></li>
+          <li><a class="hover:text-primary transition-colors" href="faq/">FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./#historia">Nossa História</a></li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-4">
         <h4 class="text-white font-bold">Contato</h4>
         <ul class="flex flex-col gap-2 text-text-muted text-sm">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>+55 43 9625-1248</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span><a class="hover:text-primary transition-colors" href="mailto:cafecarlopis@gmail.com">cafecarlopis@gmail.com</a></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>(43) 9999-9999</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span>contato@cafecarlopolis.com.br</li>
           <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span>Carlópolis, PR</li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-4">
-        <h4 class="text-white font-bold">Redes Sociais</h4>
-        <div class="flex gap-4">
-          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" aria-label="Instagram">
-            <span class="material-symbols-outlined">photo_camera</span>
-          </a>
-          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
-            <span class="material-symbols-outlined">public</span>
-          </a>
-          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://wa.me/554396251248?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20no%20Caf%C3%A9%20Carl%C3%B3polis%20%E2%98%95" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <span class="material-symbols-outlined">chat</span>
-          </a>
-        </div>
+        <h4 class="text-white font-bold">Legal</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li><a class="hover:text-primary transition-colors" href="termos/">Termos</a></li>
+          <li><a class="hover:text-primary transition-colors" href="privacidade/">Privacidade</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="border-t border-border-dark pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="border-t border-border-dark pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-text-muted text-sm">© 2025 Café Carlópolis. Todos os direitos reservados.</p>
-      <div class="flex gap-6 text-text-muted text-sm">
-        <a class="hover:text-primary transition-colors" href="privacidade.html">Privacidade</a>
-        <a class="hover:text-primary transition-colors" href="termos.html">Termos</a>
-      </div>
+      <p class="text-text-muted text-xs">Site estático • Carrinho via LocalStorage</p>
     </div>
   </div>
 </footer>
-
-<script>
-/* Carlópolis Cart — localStorage (sem backend) */
-(function(){
-  const KEY="carlopolis_cart_v1";
-  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
-  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
-  function add(item, qty=1){
-    const items=read();
-    const i=items.findIndex(x=>x.id===item.id);
-    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
-    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
-    write(items);
-  }
-  function remove(id){ write(read().filter(x=>x.id!==id)); }
-  function setQty(id, qty){
-    const items=read();
-    const it=items.find(x=>x.id===id);
-    if(!it) return;
-    it.qty = Math.max(1, parseInt(qty||1,10));
-    write(items);
-  }
-  function clear(){ write([]); }
-  function totals(){
-    const items=read();
-    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
-    return {items, subtotal, total: subtotal};
-  }
-  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
-  function updateBadge(){
-    const el=document.querySelector('[data-cart-badge]');
-    if(!el) return;
-    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
-    el.textContent = qty>99 ? "99+" : String(qty);
-    el.style.display = qty>0 ? "inline-flex" : "none";
-  }
-  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
-  document.addEventListener("DOMContentLoaded", updateBadge);
-})();
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const $items=document.getElementById("checkoutItems");
-  const $sub=document.getElementById("checkoutSubtotal");
-  const $tot=document.getElementById("checkoutTotal");
-  const btn=document.getElementById("placeOrder");
-
-  function render(){
-    const {items, subtotal, total} = window.CarlopolisCart.totals();
-    if($sub) $sub.textContent = window.CarlopolisCart.fmtBRL(subtotal);
-    if($tot) $tot.textContent = window.CarlopolisCart.fmtBRL(total);
-    if($items){
-      $items.innerHTML = items.length ? items.map(it=>`
-        <div class="flex items-center justify-between gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark bg-white/70 dark:bg-panel/50">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-md overflow-hidden bg-gray-100 dark:bg-panel flex items-center justify-center">
-              ${it.img ? `<img src="${it.img}" alt="${it.name}" class="w-full h-full object-cover">` : `<span class="material-symbols-outlined text-text-muted">coffee</span>`}
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-text-main dark:text-white">${it.name}</p>
-              <p class="text-xs text-text-muted dark:text-gray-300">Qtd: ${it.qty}</p>
-            </div>
-          </div>
-          <div class="text-sm font-bold text-text-main dark:text-white">${window.CarlopolisCart.fmtBRL(it.price * it.qty)}</div>
-        </div>
-      `).join("") : `<p class="text-text-muted dark:text-gray-300">Seu carrinho está vazio.</p>`;
-    }
-    if(btn){
-      btn.disabled = !items.length;
-      btn.classList.toggle("opacity-50", !items.length);
-      btn.classList.toggle("pointer-events-none", !items.length);
-    }
-  }
-
-  if(btn){
-    btn.addEventListener("click", function(e){
-      const {items, total} = window.CarlopolisCart.totals();
-      if(!items.length){ return; }
-      const orderId = "CP-" + Math.floor(Date.now()/1000);
-      const order = { id: orderId, items, total, createdAt: new Date().toISOString() };
-      localStorage.setItem("carlopolis_last_order_v1", JSON.stringify(order));
-      window.CarlopolisCart.clear();
-      window.location.href = "confirmacao.html";
-    });
-  }
-  render();
-});
-</script>
-
-<script src="site.js" defer></script>
-</body></html>
+</div>
+<script src="site.js"></script>
+</body>
+</html>
