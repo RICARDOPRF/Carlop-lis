@@ -34,31 +34,62 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display group/design-root overflow-x-hidden text-[#1b140d] dark:text-white transition-colors">
 <!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-200 dark:border-neutral-800 px-6 lg:px-10 py-3 bg-white dark:bg-background-dark z-20">
-<div class="flex items-center gap-4 text-[#1b140d] dark:text-white">
-<div class="size-6 text-primary">
-<!-- Branding Icon -->
-<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-9">
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Produtos</a>
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Sobre nós</a>
-</div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-opacity-90 transition-opacity text-[#fcfaf8] text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Cadastre-se</span>
-</button>
-</div>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden flex items-center justify-center text-[#1b140d] dark:text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
+  <div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap">
+    <a href="index.html" class="flex items-center gap-4 text-white">
+      <div class="flex size-8 items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-3xl">coffee_maker</span>
+      </div>
+      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+    </a>
+
+    <div class="hidden flex-1 justify-end gap-8 md:flex">
+      <nav class="flex items-center gap-9" aria-label="Navegação principal">
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+           href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+        </a>
+
+        <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-black gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-4 hover:opacity-90 transition-opacity"
+           href="login.html" data-nav="1">
+          <span class="truncate">Login</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex md:hidden items-center gap-2">
+      <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+         href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+      </a>
+
+      <button class="text-white flex items-center justify-center rounded-xl h-10 w-10 bg-surface-dark hover:bg-border-dark transition-colors"
+              aria-label="Menu" data-mobile-toggle="1">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-2 pt-3 hidden md:hidden" data-mobile-menu>
+    <div class="rounded-2xl border border-border-dark bg-[#0f1115] p-3 flex flex-col gap-2">
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html">Início</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="faq.html">FAQ</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="contato.html">Contato</a>
+      <a class="px-3 py-2 rounded-xl bg-primary text-black font-bold hover:opacity-90 transition-opacity" data-nav="1" href="login.html">Login</a>
+    </div>
+  </div>
 </header>
 <div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
   <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">

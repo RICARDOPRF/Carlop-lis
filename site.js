@@ -18,6 +18,24 @@
     }
   });
 
+  // Cart badge (localStorage)
+  const CART_KEY = "carlopolis_cart_v1";
+  function cartCount(){
+    try{
+      const items = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      return items.reduce((s,it)=> s + (Number(it.qty)||1), 0);
+    }catch(e){ return 0; }
+  }
+  function updateBadge(){
+    const n = cartCount();
+    document.querySelectorAll('[data-cart-count]').forEach(el=>{
+      el.textContent = String(n);
+      el.classList.toggle('hidden', n<=0);
+    });
+  }
+  updateBadge();
+  window.addEventListener('storage', updateBadge);
+
   // Mobile menu toggle
   const toggleBtn = document.querySelector('[data-mobile-toggle]');
   const menu = document.querySelector('[data-mobile-menu]');

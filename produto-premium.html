@@ -55,44 +55,74 @@
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white">
 <div class="flex min-h-screen w-full flex-col overflow-x-hidden">
 <!-- Header -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-brown px-4 py-4 md:px-10 bg-background-dark sticky top-0 z-50">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-3xl">coffee_maker</span>
-</div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">Café Carlópolis</h2>
-</div>
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
-<a class="text-accent-gold text-sm font-bold leading-normal border-b-2 border-primary pb-0.5" href="#">Assinaturas</a>
-<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Acessórios</a>
-</nav>
-</div>
-<div class="flex flex-1 justify-end gap-4 md:gap-8">
-<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64 group">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full ring-1 ring-border-brown focus-within:ring-primary transition-all">
-<div class="text-accent-gold flex border-none bg-surface-dark items-center justify-center pl-4 rounded-l-lg">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-l-none text-white focus:outline-0 focus:ring-0 border-none bg-surface-dark h-full placeholder:text-accent-gold/50 px-4 pl-2 text-base font-normal leading-normal" placeholder="Buscar..." value=""/>
-</div>
-</label>
-<div class="flex gap-2">
-<button class="flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">shopping_cart</span>
-</button>
-<button class="flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">account_circle</span>
-</button>
-<!-- Mobile Menu Button -->
-<button class="md:hidden flex items-center justify-center rounded-lg size-10 bg-surface-dark text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
+  <div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap">
+    <a href="index.html" class="flex items-center gap-4 text-white">
+      <div class="flex size-8 items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-3xl">coffee_maker</span>
+      </div>
+      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+    </a>
+
+    <div class="hidden flex-1 justify-end gap-8 md:flex">
+      <nav class="flex items-center gap-9" aria-label="Navegação principal">
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+           href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+        </a>
+
+        <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-black gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-4 hover:opacity-90 transition-opacity"
+           href="login.html" data-nav="1">
+          <span class="truncate">Login</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex md:hidden items-center gap-2">
+      <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+         href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+      </a>
+
+      <button class="text-white flex items-center justify-center rounded-xl h-10 w-10 bg-surface-dark hover:bg-border-dark transition-colors"
+              aria-label="Menu" data-mobile-toggle="1">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-2 pt-3 hidden md:hidden" data-mobile-menu>
+    <div class="rounded-2xl border border-border-dark bg-[#0f1115] p-3 flex flex-col gap-2">
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html">Início</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="faq.html">FAQ</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="contato.html">Contato</a>
+      <a class="px-3 py-2 rounded-xl bg-primary text-black font-bold hover:opacity-90 transition-opacity" data-nav="1" href="login.html">Login</a>
+    </div>
+  </div>
 </header>
+<main class="mx-auto max-w-7xl px-4 lg:px-10 pt-6">
+  <nav aria-label="Breadcrumb" class="text-sm text-text-muted">
+    <ol class="flex flex-wrap items-center gap-2">
+      <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a></li>
+      <li class="opacity-70">/</li>
+      <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a></li>
+      <li class="opacity-70">/</li>
+      <li class="text-white font-medium">Café Premium</li>
+    </ol>
+  </nav>
+</main>
 <div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
   <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
     <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
@@ -382,41 +412,63 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-dark border-t border-border-brown py-12 px-4 md:px-10">
-<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-10">
-<div class="flex flex-col gap-4 max-w-sm">
-<div class="flex items-center gap-2 text-white">
-<span class="material-symbols-outlined text-primary">coffee_maker</span>
-<span class="text-lg font-bold">Café Carlópolis</span>
-</div>
-<p class="text-accent-gold/70 text-sm leading-relaxed">
-                        Levando a tradição e o sabor do Norte Pioneiro do Paraná para a xícara de apaixonados por café em todo o Brasil.
-                    </p>
-</div>
-<div class="flex gap-16 flex-wrap">
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Loja</h4>
-<div class="flex flex-col gap-2 text-sm text-accent-gold/80">
-<a class="hover:text-primary" href="#">Cafés Especiais</a>
-<a class="hover:text-primary" href="#">Assinaturas</a>
-<a class="hover:text-primary" href="#">Kits e Presentes</a>
-<a class="hover:text-primary" href="#">Acessórios</a>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Institucional</h4>
-<div class="flex flex-col gap-2 text-sm text-accent-gold/80">
-<a class="hover:text-primary" href="#">Sobre Nós</a>
-<a class="hover:text-primary" href="#">Produtores</a>
-<a class="hover:text-primary" data-nav="1" href="contato.html">Contato</a>
-<a class="hover:text-primary" href="#">Política de Privacidade</a>
-</div>
-</div>
-</div>
-</div>
-<div class="max-w-[1200px] mx-auto pt-8 mt-8 border-t border-border-brown/50 text-center text-xs text-accent-gold/50">
-<p>© 2024 Café Carlópolis. Todos os direitos reservados.</p>
-</div>
+<footer class="bg-[#150f09] text-white pt-16 pb-8 border-t border-border-dark">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">coffee_maker</span>
+          <h3 class="text-lg font-bold">Café Carlópolis</h3>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Levando o sabor autêntico do Norte Pioneiro do Paraná até a sua casa. Qualidade, tradição e amor pelo café em cada grão.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Navegação</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Contato</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>+55 43 9625-1248</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span><a class="hover:text-primary transition-colors" href="mailto:cafecarlopis@gmail.com">cafecarlopis@gmail.com</a></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span>Carlópolis, PR</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Redes Sociais</h4>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://wa.me/554396251248?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20no%20Caf%C3%A9%20Carl%C3%B3polis%20%E2%98%95" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="material-symbols-outlined">chat</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-border-dark pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-text-muted text-sm">© 2025 Café Carlópolis. Todos os direitos reservados.</p>
+      <div class="flex gap-6 text-text-muted text-sm">
+        <a class="hover:text-primary transition-colors" href="privacidade.html">Privacidade</a>
+        <a class="hover:text-primary transition-colors" href="termos.html">Termos</a>
+      </div>
+    </div>
+  </div>
 </footer>
 </div>
 
