@@ -1,43 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login — Café Carlópolis</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-neutral-950 text-neutral-100">
-<header class="border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold">Café <span class="text-amber-400">Carlópolis</span></a>
-    <nav class="flex flex-wrap gap-6 text-sm text-neutral-300">
-      <a href="index.html#produtos" class="hover:text-white">Loja</a>
-      <a href="historia.html" class="hover:text-white">Nossa História</a>
-      <a href="contato.html" class="hover:text-white">Contato</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="carrinho.html" class="hover:text-white font-semibold">Carrinho</a>
-    </nav>
-  </div>
-</header>
-<main class="max-w-4xl mx-auto px-4 py-14">
-  <h1 class="text-3xl font-extrabold mb-6">Login</h1>
-  <div class="text-neutral-300 leading-relaxed space-y-4">
-    
-<p>Área de acesso para clientes. (Em breve: histórico de pedidos e dados salvos.)</p>
-<p class="text-neutral-400 text-sm">Se você é administrador, acesse <a class="underline hover:text-white" href="admin-login.html">Admin Login</a>.</p>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span> Café Carlópolis</div>
+      <div class="nav">
+        <a href="index.html">Início</a>
+        <a href="produto-gourmet.html">Gourmet</a>
+        <a href="produto-premium.html">Premium</a>
+        <a href="contato.html">Contato</a>
+        <a class="cartlink" href="carrinho.html">Carrinho <span class="badge" data-cart-badge>0</span></a>
+      </div>
+    </div>
 
+  <div class="section">
+    <h1 style="margin:0 0 10px 0">Login (cliente)</h1>
+    <div class="kv">Tela visual (site estático). Pode ser integrado ao Firebase depois.</div>
   </div>
-</main>
-<footer class="border-t border-white/10 py-8 mt-16">
-  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-neutral-400">
-    <p>© Café Carlópolis</p>
-    <p class="mt-2">
-      <a href="mailto:cafecarlopis@gmail.com" class="hover:text-white">cafecarlopis@gmail.com</a> ·
-      <a href="https://wa.me/554396251248" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a> ·
-      <a href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" class="hover:text-white">Instagram</a> ·
-      <a href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
-    </p>
+<div class="footer">
+      <div>© 2025 Café Carlópolis. Todos os direitos reservados.</div>
+      <div class="social-links" aria-label="Redes Sociais">
+        <a data-contact="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a data-contact="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a data-contact="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
-</footer>
+  <script src="site.js"></script>
 </body>
 </html>

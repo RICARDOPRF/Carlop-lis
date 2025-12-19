@@ -1,80 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Carlópolis — Cafés Especiais</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="site.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Carlópolis — Loja</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-neutral-950 text-neutral-100">
-<header class="border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold">Café <span class="text-amber-400">Carlópolis</span></a>
-    <nav class="flex flex-wrap gap-6 text-sm text-neutral-300">
-      <a href="index.html#produtos" class="hover:text-white">Loja</a>
-      <a href="historia.html" class="hover:text-white">Nossa História</a>
-      <a href="contato.html" class="hover:text-white">Contato</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="carrinho.html" class="hover:text-white font-semibold">Carrinho</a>
-    </nav>
-  </div>
-</header>
-
-<section class="max-w-6xl mx-auto px-4 py-16 text-center">
-  <h1 class="text-4xl md:text-5xl font-extrabold">
-    Cafés especiais direto de <span class="text-amber-400">Carlópolis</span>
-  </h1>
-  <p class="mt-6 text-neutral-300 max-w-2xl mx-auto">
-    Do produtor para a sua xícara. Qualidade, origem e sabor em cada grão.
-  </p>
-  <div class="mt-8 flex flex-wrap justify-center gap-3">
-    <a href="#produtos" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold transition">Ver produtos</a>
-    <a href="historia.html" class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 font-semibold transition">Nossa História</a>
-  </div>
-</section>
-
-<section id="produtos" class="max-w-6xl mx-auto px-4 pb-20">
-  <h2 class="text-3xl font-bold mb-10 text-center">Nossos Cafés</h2>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-    <div class="bg-neutral-900 rounded-2xl p-5 flex flex-col border border-white/10">
-      <img src="https://artedocampo.hel1.your-objectstorage.com/images/products/seller_670/Cafe-Gourmet-500g-Cafe-Carlopolis_68ed94ef-68be-45d1-8901-75a99c3ffd05.webp"
-           class="h-64 object-contain mb-4 bg-white rounded-xl p-2" loading="lazy" />
-      <h3 class="text-lg font-bold">Café Gourmet 500g</h3>
-      <p class="mt-4 text-2xl font-extrabold">R$ 49,90</p>
-      <a href="produto-gourmet.html" class="mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-2 rounded-xl text-center">Comprar</a>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span> Café Carlópolis</div>
+      <div class="nav">
+        <a href="index.html">Início</a>
+        <a href="produto-gourmet.html">Gourmet</a>
+        <a href="produto-premium.html">Premium</a>
+        <a href="contato.html">Contato</a>
+        <a class="cartlink" href="carrinho.html">Carrinho <span class="badge" data-cart-badge>0</span></a>
+      </div>
     </div>
 
-    <div class="bg-neutral-900 rounded-2xl p-5 flex flex-col border border-white/10">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_745118-MLB75057789427_032024-F.webp"
-           class="h-64 object-contain mb-4 bg-white rounded-xl p-2" loading="lazy" />
-      <h3 class="text-lg font-bold">Café Tradicional 500g</h3>
-      <p class="mt-4 text-2xl font-extrabold">R$ 69,90</p>
-      <a href="produto-tradicional.html" class="mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-2 rounded-xl text-center">Comprar</a>
+    <div class="hero">
+      <div>
+        <h1>Cafés especiais, direto da origem ☕</h1>
+        <p>Seleção cuidadosa do Sítio Primavera. Torrado no ponto, entregue rápido, com qualidade e rastreabilidade.</p>
+        <div class="ctaRow">
+          <a class="btn primary" href="produto-gourmet.html">Ver Café Gourmet</a>
+          <a class="btn ghost" href="produto-premium.html">Ver Café Premium</a>
+        </div>
+        <div class="section" style="margin-top:16px">
+          <div class="kv"><b>Precisa de ajuda?</b><br>
+            Fale conosco pelo WhatsApp ou ligue para <a class="link" data-contact="phone" href="#">(00) 00000-0000</a>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <img class="adalto-img" src="assets/adalto.jpg" alt="José Adalto segurando um pacote de café (adicione assets/adalto.jpg)" />
+        <div style="margin-top:10px">
+          <div style="font-weight:950">José Adalto</div>
+          <div class="kv">Produtor & Fundador</div>
+        </div>
+      </div>
     </div>
 
-    <div class="bg-neutral-900 rounded-2xl p-5 flex flex-col border border-white/10">
-      <img src="https://artedocampo.hel1.your-objectstorage.com/images/products/seller_670/Cafe-Premium-500g-Cafe-Carlopolis_e252343c-ebe5-4308-816a-4e291f52b0c1.webp"
-           class="h-64 object-contain mb-4 bg-white rounded-xl p-2" loading="lazy" />
-      <h3 class="text-lg font-bold">Café Premium 500g</h3>
-      <p class="mt-4 text-2xl font-extrabold">R$ 76,00</p>
-      <a href="produto-premium.html" class="mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-2 rounded-xl text-center">Comprar</a>
+    <div class="products">
+      <div class="card">
+        <div class="ph"></div>
+        <div>
+          <h3>Café Gourmet 500g</h3>
+          <div class="sub">Moído • Torra média • Perfil equilibrado</div>
+          <div class="price">R$ 49,90</div>
+          <div class="actions">
+            <button class="btn primary" onclick="buyNow('gourmet')">Comprar</button>
+            <button class="btn ghost" onclick="addAndStay('gourmet')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph"></div>
+        <div>
+          <h3>Café Premium 1kg</h3>
+          <div class="sub">Em grãos • 1kg • Aroma intenso</div>
+          <div class="price">R$ 85,00</div>
+          <div class="actions">
+            <button class="btn primary" onclick="buyNow('premium')">Comprar</button>
+            <button class="btn ghost" onclick="addAndStay('premium')">Adicionar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="section">
+      <h3 style="margin:0 0 8px 0">Atendimento</h3>
+      <div class="kv">Segunda a Sexta, 8h às 18h • WhatsApp/Telefone: <a class="link" data-contact="phone" href="#">(00) 00000-0000</a></div>
+    </div>
+<div class="footer">
+      <div>© 2025 Café Carlópolis. Todos os direitos reservados.</div>
+      <div class="social-links" aria-label="Redes Sociais">
+        <a data-contact="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a data-contact="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a data-contact="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
-</section>
-
-<footer class="border-t border-white/10 py-8 mt-16">
-  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-neutral-400">
-    <p>© Café Carlópolis</p>
-    <p class="mt-2">
-      <a href="mailto:cafecarlopis@gmail.com" class="hover:text-white">cafecarlopis@gmail.com</a> ·
-      <a href="https://wa.me/554396251248" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a> ·
-      <a href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" class="hover:text-white">Instagram</a> ·
-      <a href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
-    </p>
-  </div>
-</footer>
+  <script src="site.js"></script>
 </body>
 </html>
