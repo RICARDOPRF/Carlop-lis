@@ -1,39 +1,380 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ — Café Carlópolis</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Café Carlópolis - Perguntas Frequentes</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211",
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#221810",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d2118",
+                        "text-main": "#1b130d",
+                        "text-secondary": "#9a6c4c",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom styles for accordion animation */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <div class="topbar">
-      <div class="brand"><span class="dot"></span> Café Carlópolis</div>
-      <div class="nav">
-        <a href="index.html">Início</a>
-        <a href="produto-gourmet.html">Gourmet</a>
-        <a href="produto-premium.html">Premium</a>
-        <a href="contato.html">Contato</a>
-        <a class="cartlink" href="carrinho.html">Carrinho <span class="badge" data-cart-badge>0</span></a>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden transition-colors duration-200">
+<div class="relative flex flex-col min-h-screen w-full">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
+  <div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap">
+    <a href="index.html" class="flex items-center gap-4 text-white">
+      <div class="flex size-8 items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-3xl">coffee_maker</span>
+      </div>
+      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+    </a>
+
+    <div class="hidden flex-1 justify-end gap-8 md:flex">
+      <nav class="flex items-center gap-9" aria-label="Navegação principal">
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+           href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+        </a>
+
+        <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-black gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-4 hover:opacity-90 transition-opacity"
+           href="login.html" data-nav="1">
+          <span class="truncate">Login</span>
+        </a>
       </div>
     </div>
 
-  <div class="section">
-    <h1 style="margin:0 0 10px 0">Perguntas frequentes</h1>
-    <div class="kv"><b>Como comprar?</b><br>Escolha o produto → Comprar → Carrinho → Checkout.</div>
-    <div class="kv" style="margin-top:10px"><b>Como falar com atendimento?</b><br>WhatsApp/Telefone: <a class="link" data-contact="phone" href="#">(00) 00000-0000</a></div>
+    <div class="flex md:hidden items-center gap-2">
+      <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+         href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+      </a>
+
+      <button class="text-white flex items-center justify-center rounded-xl h-10 w-10 bg-surface-dark hover:bg-border-dark transition-colors"
+              aria-label="Menu" data-mobile-toggle="1">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
   </div>
-<div class="footer">
-      <div>© 2025 Café Carlópolis. Todos os direitos reservados.</div>
-      <div class="social-links" aria-label="Redes Sociais">
-        <a data-contact="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a data-contact="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a data-contact="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+
+  <div class="mx-auto max-w-7xl px-2 pt-3 hidden md:hidden" data-mobile-menu>
+    <div class="rounded-2xl border border-border-dark bg-[#0f1115] p-3 flex flex-col gap-2">
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html">Início</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="faq.html">FAQ</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="contato.html">Contato</a>
+      <a class="px-3 py-2 rounded-xl bg-primary text-black font-bold hover:opacity-90 transition-opacity" data-nav="1" href="login.html">Login</a>
+    </div>
+  </div>
+</header>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Hero Section with Search -->
+<section class="w-full bg-background-light dark:bg-background-dark pt-6 px-4 md:px-10">
+<div class="max-w-[1200px] mx-auto rounded-2xl overflow-hidden relative min-h-[400px] flex flex-col items-center justify-center text-center p-8 gap-8" data-alt="Close up of roasted coffee beans with steam rising" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAT36DkxVv_SYssPFHtU6SfzfSNYyDIOtdgVPB132Dmg2kxKNE_-72TNGPL9bN860LqtI0BR03qyehjOwMKdGEpGSfPmM9gVfTDN7j6Cser35vtxTnIm4F_v2gABuuuEw82Z18oAFNkKaFvf9MHseGrcbcuGZfCF_2isfx3eHRGKgZb5QZ_BrbZskYUGzuUtVSTglb1-F6976iRQC3NDRvibl_GTtJ9e2EiMgTsnPqR3nPtm0CdFrL_ryUxfhiaAciBUET3TWHzA69a"); background-size: cover; background-position: center;'>
+<div class="flex flex-col gap-3 max-w-2xl z-10">
+<h1 class="text-white text-4xl md:text-5xl font-black tracking-tight">
+                        Perguntas Frequentes
+                    </h1>
+<p class="text-gray-200 text-base md:text-lg">
+                        Como podemos ajudar você hoje? Encontre respostas sobre nossos cafés, entregas e sustentabilidade.
+                    </p>
+</div>
+<div class="w-full max-w-[560px] z-10">
+<div class="flex w-full items-center bg-white rounded-lg h-14 shadow-lg focus-within:ring-2 focus-within:ring-primary/50 transition-all overflow-hidden">
+<div class="pl-4 text-text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full px-4 text-text-main placeholder:text-text-secondary/70 bg-transparent border-none focus:ring-0 outline-none" placeholder="Busque por entrega, tipos de grãos, pagamentos..."/>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold h-full px-6 transition-colors">
+                            Buscar
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-10 py-12">
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-1/4 shrink-0">
+<div class="sticky top-24 flex flex-col gap-6">
+<div class="hidden lg:flex gap-3 items-center mb-2">
+<div class="bg-cover bg-center rounded-full size-12 shadow-sm border-2 border-primary/20" data-alt="Latte art in a ceramic cup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkcowWYesI4vZ7szSDJJ6x1vGl_GFeMw7p80pItjOGwKTY1cPrGgeiP6J98Gm9ozj-8XsvSFhOz9405vUEabo-Sbr_hwi8zPTubhr4YUfTtsY1b1Pyg4BGGrKe6FHOS0q3hhuEch-cn5nEdx796B2gD0dGIzHtezRzPRcaHtKgdTlYx9ZvIofrAHbAASaUozp8ljeDRmcHDKn2rRKT581TB-BbQ2AIu2ucOtxuoApYeZQxYD1tt9TRaI03pQNktY-WMzd_AI1gYEDP");'></div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold">Categorias</h3>
+<p class="text-text-secondary text-sm">Navegue por tópicos</p>
+</div>
+</div>
+<div class="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 scrollbar-hide">
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20 transition-all whitespace-nowrap lg:whitespace-normal group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">info</span>
+<span class="font-bold text-sm">Geral</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#f3ece7] dark:hover:bg-[#3e2c20] text-text-main dark:text-gray-300 transition-all whitespace-nowrap lg:whitespace-normal group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">coffee</span>
+<span class="font-medium text-sm">Produtos</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#f3ece7] dark:hover:bg-[#3e2c20] text-text-main dark:text-gray-300 transition-all whitespace-nowrap lg:whitespace-normal group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">local_shipping</span>
+<span class="font-medium text-sm">Entregas</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#f3ece7] dark:hover:bg-[#3e2c20] text-text-main dark:text-gray-300 transition-all whitespace-nowrap lg:whitespace-normal group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">recycling</span>
+<span class="font-medium text-sm">Sustentabilidade</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#f3ece7] dark:hover:bg-[#3e2c20] text-text-main dark:text-gray-300 transition-all whitespace-nowrap lg:whitespace-normal group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">credit_card</span>
+<span class="font-medium text-sm">Pagamentos</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Accordion Content -->
+<div class="flex-1 min-w-0">
+<div class="mb-6 border-b border-[#e7d9cf] dark:border-[#3e2c20] pb-4">
+<h2 class="text-2xl font-bold tracking-tight text-text-main dark:text-white">Dúvidas Gerais</h2>
+<p class="text-text-secondary mt-1">As perguntas mais comuns de nossos clientes.</p>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Accordion Item 1 -->
+<details class="group rounded-xl border border-[#e7d9cf] dark:border-[#3e2c20] bg-surface-light dark:bg-surface-dark overflow-hidden transition-all duration-300 hover:shadow-sm" open="">
+<summary class="flex cursor-pointer items-center justify-between p-5 select-none bg-surface-light dark:bg-surface-dark">
+<h3 class="text-base font-bold text-text-main dark:text-white pr-4">Qual a diferença entre o Café Gourmet e o Premium?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-0">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
+                                    A principal diferença está na pontuação da SCAA (Specialty Coffee Association). Nosso <strong>Café Gourmet</strong> possui pontuação acima de 80 pontos, com grãos selecionados e torra controlada, ideal para o dia a dia. Já o <strong>Café Premium</strong> passa por um processo ainda mais rigoroso, com grãos 100% arábica de peneira alta e pontuação superior a 84 pontos, apresentando notas sensoriais mais complexas como chocolate e frutas secas.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group rounded-xl border border-[#e7d9cf] dark:border-[#3e2c20] bg-surface-light dark:bg-surface-dark overflow-hidden transition-all duration-300 hover:shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-5 select-none">
+<h3 class="text-base font-bold text-text-main dark:text-white pr-4">Vocês entregam em todo o Brasil?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-0">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
+                                    Sim! O Café Carlópolis entrega em todo o território nacional através de parcerias com transportadoras e Correios. O prazo de entrega varia de acordo com o seu CEP, que pode ser calculado diretamente na página do produto ou no carrinho de compras. Oferecemos <strong>Frete Grátis</strong> para compras acima de R$ 250,00 para as regiões Sul e Sudeste.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group rounded-xl border border-[#e7d9cf] dark:border-[#3e2c20] bg-surface-light dark:bg-surface-dark overflow-hidden transition-all duration-300 hover:shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-5 select-none">
+<h3 class="text-base font-bold text-text-main dark:text-white pr-4">O que significa o Selo Eu Reciclo na embalagem?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-0">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
+                                    Temos muito orgulho dessa parceria! O <strong>Selo Eu Reciclo</strong> garante que a nossa marca compensa o impacto ambiental de 100% das nossas embalagens. Para cada pacote que vendemos, financiamos a reciclagem de uma quantidade equivalente de material (plástico/papel), apoiando cooperativas de reciclagem e garantindo que o ciclo sustentável se feche. Ao comprar Café Carlópolis, você apoia a cadeia de reciclagem no Brasil.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 4 -->
+<details class="group rounded-xl border border-[#e7d9cf] dark:border-[#3e2c20] bg-surface-light dark:bg-surface-dark overflow-hidden transition-all duration-300 hover:shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-5 select-none">
+<h3 class="text-base font-bold text-text-main dark:text-white pr-4">Como funciona a assinatura de café?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-0">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
+                                    Nossa assinatura é flexível e feita para quem não quer ficar sem café fresco em casa. Você escolhe seus grãos favoritos, a frequência de envio (mensal ou quinzenal) e a quantidade. Assinantes do <strong>Clube Carlópolis</strong> ganham 15% de desconto em todos os pedidos recorrentes e brindes exclusivos a cada 3 meses. Você pode cancelar ou pausar a assinatura a qualquer momento através do seu painel de usuário.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 5 -->
+<details class="group rounded-xl border border-[#e7d9cf] dark:border-[#3e2c20] bg-surface-light dark:bg-surface-dark overflow-hidden transition-all duration-300 hover:shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-5 select-none">
+<h3 class="text-base font-bold text-text-main dark:text-white pr-4">Quais são as formas de pagamento?</h3>
+<span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-0">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
+                                    Aceitamos pagamentos via cartão de crédito (parcelamento em até 3x sem juros), PIX com 5% de desconto instantâneo e boleto bancário. Todas as transações são criptografadas e processadas por gateways de pagamento seguros para garantir a sua tranquilidade.
+                                </p>
+</div>
+</details>
+</div>
+<!-- Contact Box -->
+<div class="mt-12 rounded-2xl bg-[#e7d9cf]/30 dark:bg-[#3e2c20]/50 p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#e7d9cf] dark:border-[#3e2c20]">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<h4 class="text-xl font-bold text-text-main dark:text-white">Ainda tem dúvidas?</h4>
+<p class="text-text-secondary dark:text-gray-300 text-sm max-w-md">Se não encontrou o que procurava, nossa equipe de especialistas em café está pronta para te atender.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-[#e7d9cf] dark:border-[#5c4030] text-text-main dark:text-white font-bold hover:bg-[#fcfaf8] dark:hover:bg-[#3e2c20] transition-colors">
+<span class="material-symbols-outlined text-lg">mail</span>
+                                Enviar E-mail
+                            </button>
+<button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">chat</span>
+                                WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-[#150f09] text-white pt-16 pb-8 border-t border-border-dark">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">coffee_maker</span>
+          <h3 class="text-lg font-bold">Café Carlópolis</h3>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Levando o sabor autêntico do Norte Pioneiro do Paraná até a sua casa. Qualidade, tradição e amor pelo café em cada grão.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Navegação</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Contato</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>+55 43 9625-1248</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span><a class="hover:text-primary transition-colors" href="mailto:cafecarlopis@gmail.com">cafecarlopis@gmail.com</a></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span>Carlópolis, PR</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Redes Sociais</h4>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://wa.me/554396251248?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20no%20Caf%C3%A9%20Carl%C3%B3polis%20%E2%98%95" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="material-symbols-outlined">chat</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-border-dark pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-text-muted text-sm">© 2025 Café Carlópolis. Todos os direitos reservados.</p>
+      <div class="flex gap-6 text-text-muted text-sm">
+        <a class="hover:text-primary transition-colors" href="privacidade.html">Privacidade</a>
+        <a class="hover:text-primary transition-colors" href="termos.html">Termos</a>
       </div>
     </div>
   </div>
-  <script src="site.js"></script>
-</body>
-</html>
+</footer>
+</div>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+<script src="site.js" defer></script>
+</body></html>
