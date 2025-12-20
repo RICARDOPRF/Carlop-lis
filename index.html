@@ -2,63 +2,31 @@
 <html lang="pt-BR" class="dark">
 <head>
 <meta charset="UTF-8">
-<title>Café Carlópolis – Sabor e Tradição</title>
+<title>Index | Café Carlópolis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#d47311",
-        bgdark: "#221910",
-        surface: "#332619",
-        borderc: "#483623",
-        muted: "#c9ad92"
-      }
-    }
-  }
-}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
 </script>
 </head>
-
-<body class="bg-bgdark text-white font-[Work Sans]">
-
-<header class="flex justify-between items-center px-6 py-4 border-b border-borderc">
-  <h1 class="text-xl font-bold flex items-center gap-2">
-    <span class="material-symbols-outlined text-primary">coffee</span>
-    Café Carlópolis
-  </h1>
-  <nav class="flex gap-6 text-sm">
-    <a href="index.html">Início</a>
-    <a href="produto-gourmet.html">Produtos</a>
-    <a href="historia.html">Nossa História</a>
-    <a href="contato.html">Contato</a>
-  </nav>
-</header>
-
-<section class="relative min-h-[70vh] flex items-center justify-center text-center px-6"
-style="background-image:linear-gradient(rgba(34,25,16,.85),rgba(34,25,16,.85)),url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');background-size:cover;">
-  <div class="max-w-3xl">
-    <h2 class="text-5xl font-black mb-6">Sabor e Tradição do Norte Pioneiro</h2>
-    <p class="text-muted text-lg mb-8">
-      Cafés especiais cultivados com cuidado, tradição e paixão em Carlópolis – PR.
-    </p>
-    <a href="produto-gourmet.html" class="bg-primary px-8 py-3 rounded-lg font-bold hover:opacity-90 transition">
-      Conhecer Cafés
-    </a>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
+    </nav>
   </div>
-</section>
-
-<footer class="border-t border-borderc px-6 py-10 text-center text-sm text-muted">
-  © 2025 Café Carlópolis — Todos os direitos reservados.
+</header>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Index</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
+</main>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
 </footer>
-
 </body>
 </html>

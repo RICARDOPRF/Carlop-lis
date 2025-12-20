@@ -1,133 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Nossa História | Café Carlópolis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#d47311",
-            bg: "#221910",
-            surface: "#332619",
-            borderc: "#483623",
-            muted: "#c9ad92"
-          },
-          fontFamily: {
-            display: ["Work Sans", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="UTF-8">
+<title>Historia | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
+</script>
 </head>
-
-<body class="bg-bg text-white font-display">
-
-<!-- HEADER -->
-<header class="border-b border-borderc bg-bg">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="index.html" class="text-xl font-black text-primary">Café Carlópolis</a>
-    <nav class="flex gap-6 text-sm">
-      <a href="index.html" class="hover:text-primary">Início</a>
-      <a href="produto-tradicional.html" class="hover:text-primary">Produtos</a>
-      <a href="historia.html" class="text-primary font-bold">Nossa História</a>
-      <a href="contato.html" class="hover:text-primary">Contato</a>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </div>
 </header>
-
-<!-- HERO -->
-<section class="relative min-h-[420px] flex items-center justify-center bg-cover bg-center"
-  style="background-image: linear-gradient(rgba(34,25,16,.85), rgba(34,25,16,.85)), url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');">
-  <div class="text-center max-w-3xl px-6">
-    <h1 class="text-4xl md:text-5xl font-black mb-4">
-      Nossa História
-    </h1>
-    <p class="text-muted text-lg">
-      Tradição, família e paixão pelo café atravessando gerações.
-    </p>
-  </div>
-</section>
-
-<!-- CONTEÚDO -->
-<section class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-  <!-- TEXTO -->
-  <div class="space-y-6">
-    <h2 class="text-3xl font-black text-primary">
-      José Adalto de Oliveira
-    </h2>
-
-    <p class="text-muted leading-relaxed">
-      A arte de produzir cafés especiais exige dedicação, respeito ao tempo da natureza
-      e compromisso com a qualidade. Foi com essa visão que <strong class="text-white">
-      José Adalto de Oliveira</strong> iniciou sua trajetória no cultivo do café
-      em Carlópolis, no Norte Pioneiro do Paraná.
-    </p>
-
-    <p class="text-muted leading-relaxed">
-      No <strong class="text-white">Sítio Primavera</strong>, a tradição familiar se
-      uniu à inovação. O cuidado começa no plantio, passa pela colheita seletiva
-      e segue até a torrefação artesanal, realizada na própria propriedade.
-    </p>
-
-    <p class="text-muted leading-relaxed">
-      Cada grão carrega história, identidade e o compromisso de levar até você
-      um café autêntico, equilibrado e marcante — do campo direto para a xícara.
-    </p>
-  </div>
-
-  <!-- FOTO -->
-  <div class="flex justify-center">
-    <div class="bg-surface border border-borderc rounded-xl overflow-hidden shadow-xl max-w-sm">
-      <img 
-        src="https://i.imgur.com/3rXekno.png"
-        alt="José Adalto de Oliveira - Fundador do Café Carlópolis"
-        class="w-full h-auto object-cover"
-      >
-      <div class="p-4 text-center">
-        <p class="font-bold">José Adalto de Oliveira</p>
-        <p class="text-sm text-muted">Fundador • Café Carlópolis</p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- FRASE -->
-<section class="bg-surface border-t border-borderc py-14">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <p class="text-xl md:text-2xl font-semibold italic text-muted">
-      “Produzir café não é apenas um trabalho.  
-      É um compromisso com a terra, com a família e com quem aprecia qualidade.”
-    </p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-[#150f09] border-t border-borderc py-10">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p class="text-sm text-muted">
-      © 2024 Café Carlópolis. Todos os direitos reservados.
-    </p>
-    <div class="flex gap-4 text-sm">
-      <a href="termos.html" class="hover:text-primary">Termos</a>
-      <a href="privacidade.html" class="hover:text-primary">Privacidade</a>
-    </div>
-  </div>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Historia</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
+</main>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
 </footer>
-
 </body>
 </html>

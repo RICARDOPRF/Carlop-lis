@@ -1,81 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Tradicional 500g — Café Carlópolis</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="site.js" defer></script>
+<meta charset="UTF-8">
+<title>Produto Tradicional | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
+</script>
 </head>
-<body class="bg-neutral-950 text-neutral-100">
-<header class="border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold">Café <span class="text-amber-400">Carlópolis</span></a>
-    <nav class="flex gap-6 text-sm text-neutral-300">
-      <a href="index.html#produtos" class="hover:text-white">Loja</a>
-      <a href="historia.html" class="hover:text-white">Nossa História</a>
-      <a href="contato.html" class="hover:text-white">Contato</a>
-      <a href="carrinho.html" class="hover:text-white font-semibold">Carrinho</a>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </div>
 </header>
-
-<main class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-12 items-start">
-  <div class="bg-white rounded-2xl p-6">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_745118-MLB75057789427_032024-F.webp"
-         alt="Café Tradicional 500g - Café Carlópolis"
-         class="w-full h-[420px] object-contain" loading="lazy" />
-  </div>
-
-  <div>
-    <p class="text-amber-400 font-semibold">Café Carlópolis</p>
-    <h1 class="text-3xl md:text-4xl font-extrabold mt-2">Café Tradicional 500g</h1>
-    <p class="mt-4 text-neutral-300 leading-relaxed">
-      Café clássico, equilibrado e versátil, ideal para o consumo diário. Produzido com cuidado desde a colheita até a torra.
-    </p>
-
-    <div class="mt-6 flex items-end gap-4">
-      <span class="text-3xl font-extrabold text-white">R$ 69,90</span>
-      <span class="text-sm text-neutral-400">• 500g</span>
-    </div>
-
-    <div class="mt-8 flex flex-wrap gap-4">
-      <button id="btnAddTrad" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold transition">
-        Adicionar ao carrinho
-      </button>
-
-      <a href="https://wa.me/554396251248?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20no%20Caf%C3%A9%20Carl%C3%B3polis%20%E2%98%95%0A%0AProduto%3A%20Caf%C3%A9%20Tradicional%20500g%0AQuantidade%3A%201"
-         target="_blank" rel="noopener"
-         class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 font-semibold transition">
-        Comprar no WhatsApp
-      </a>
-    </div>
-
-    <p class="mt-6 text-sm text-neutral-400">
-      📧 <a href="mailto:cafecarlopis@gmail.com" class="underline hover:text-white">cafecarlopis@gmail.com</a>
-    </p>
-  </div>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Produto Tradicional</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
 </main>
-
-<footer class="border-t border-white/10 py-8">
-  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-neutral-400">© Café Carlópolis</div>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
 </footer>
-
-<script>
-  const btn = document.getElementById("btnAddTrad");
-  btn?.addEventListener("click", () => {
-    if (!window.CarlopolisCart || typeof window.CarlopolisCart.add !== "function") {
-      alert("Carrinho não carregou. Verifique o site.js.");
-      return;
-    }
-    window.CarlopolisCart.add({
-      id: "trad500",
-      name: "Café Carlópolis Tradicional 500g",
-      price: 69.90,
-      img: "https://http2.mlstatic.com/D_NQ_NP_2X_745118-MLB75057789427_032024-F.webp"
-    }, 1);
-    window.location.href = "carrinho.html";
-  });
-</script>
 </body>
 </html>

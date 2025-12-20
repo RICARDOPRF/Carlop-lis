@@ -1,104 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin • Produtos | Café Carlópolis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#d47311",
-            bg: "#221910",
-            surface: "#332619",
-            borderc: "#483623",
-            muted: "#c9ad92"
-          },
-          fontFamily: {
-            display: ["Work Sans", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="UTF-8">
+<title>Admin Produtos | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
+</script>
 </head>
-
-<body class="bg-bg text-white font-display">
-
-<div class="flex min-h-screen">
-
-  <!-- SIDEBAR -->
-  <aside class="w-64 bg-surface border-r border-borderc p-6 hidden md:block">
-    <h1 class="text-xl font-black text-primary mb-10">Café Carlópolis</h1>
-
-    <nav class="space-y-3">
-      <a href="admin.html" class="block px-4 py-2 rounded hover:bg-borderc transition">
-        Dashboard
-      </a>
-      <a href="admin-produtos.html" class="block px-4 py-2 rounded bg-primary text-bg font-bold">
-        Produtos
-      </a>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
     </nav>
-  </aside>
-
-  <!-- CONTEÚDO -->
-  <main class="flex-1 p-8 space-y-8">
-
-    <header class="flex justify-between items-center">
-      <h2 class="text-3xl font-black">Gerenciar Produtos</h2>
-      <button class="bg-primary text-bg px-6 py-2 rounded-lg font-bold hover:opacity-90">
-        + Novo Produto
-      </button>
-    </header>
-
-    <div class="bg-surface border border-borderc rounded-xl overflow-hidden">
-      <table class="w-full text-left">
-        <thead class="bg-borderc text-sm uppercase">
-          <tr>
-            <th class="p-4">Produto</th>
-            <th class="p-4">Categoria</th>
-            <th class="p-4">Preço</th>
-            <th class="p-4">Estoque</th>
-            <th class="p-4 text-right">Ações</th>
-          </tr>
-        </thead>
-
-        <tbody class="divide-y divide-borderc text-sm">
-          <tr>
-            <td class="p-4 font-semibold">Café Gourmet Carlópolis</td>
-            <td class="p-4 text-muted">Gourmet</td>
-            <td class="p-4">R$ 45,00</td>
-            <td class="p-4">60</td>
-            <td class="p-4 text-right">
-              <button class="text-primary hover:underline">Editar</button>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="p-4 font-semibold">Café Premium Carlópolis</td>
-            <td class="p-4 text-muted">Premium</td>
-            <td class="p-4">R$ 38,00</td>
-            <td class="p-4">22</td>
-            <td class="p-4 text-right">
-              <button class="text-primary hover:underline">Editar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-  </main>
-</div>
-
+  </div>
+</header>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Admin Produtos</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
+</main>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
+</footer>
 </body>
 </html>

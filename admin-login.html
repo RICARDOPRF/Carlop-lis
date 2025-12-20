@@ -1,153 +1,32 @@
 <!DOCTYPE html>
-
-<html class="light" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Login Administrador - Café Carlópolis</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#135bec",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#101622",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display antialiased text-[#0d121b] dark:text-white transition-colors duration-200">
-<div class="relative flex min-h-screen w-full flex-col justify-center overflow-hidden py-6 sm:py-12">
-<!-- Background decoration -->
-<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&amp;w=2561&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-5 dark:opacity-10" data-alt="Dark roasted coffee beans texture background"></div>
-<div class="relative w-full max-w-[960px] mx-auto px-4">
-<div class="mx-auto w-full max-w-[480px] bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl overflow-hidden border border-[#e7ebf3] dark:border-[#2d3748]">
-<!-- Header Section -->
-<div class="flex flex-col items-center justify-center pt-10 pb-6 px-10 text-center">
-<div class="mb-4 flex items-center justify-center p-3 bg-primary/10 rounded-full">
-<div class="size-10 text-primary">
-<!-- Replaced with Material Symbol -->
-<span class="material-symbols-outlined text-4xl">local_cafe</span>
-</div>
-</div>
-<h1 class="text-[#0d121b] dark:text-white text-2xl font-black leading-tight tracking-[-0.015em] mb-2">Café Carlópolis</h1>
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300">
-<span class="material-symbols-outlined text-[16px]">admin_panel_settings</span>
-<span>Portal Administrativo</span>
-</div>
-<p class="mt-6 text-[#4c669a] dark:text-gray-400 text-base font-normal leading-normal">
-                        Entre com suas credenciais para gerenciar a loja.
-                    </p>
-</div>
-<!-- Form Section -->
-<form action="#" class="flex flex-col gap-5 px-10 pb-10" onsubmit="event.preventDefault();">
-<!-- Username Field -->
-<div class="flex flex-col gap-2">
-<label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal" for="email">E-mail ou Usuário</label>
-<div class="relative flex items-center">
-<div class="absolute left-4 text-[#4c669a]">
-<span class="material-symbols-outlined">person</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 focus:border-primary h-12 pl-12 pr-4 text-base font-normal leading-normal placeholder:text-[#9ca3af]" id="email" placeholder="admin@cafecarlopolis.com.br" type="text"/>
-</div>
-</div>
-<!-- Password Field -->
-<div class="flex flex-col gap-2">
-<div class="flex justify-between items-center">
-<label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal" for="password">Senha</label>
-</div>
-<div class="relative flex w-full items-stretch rounded-lg">
-<div class="absolute left-4 top-3 text-[#4c669a] z-10">
-<span class="material-symbols-outlined">lock</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 focus:border-primary h-12 pl-12 pr-12 text-base font-normal leading-normal placeholder:text-[#9ca3af]" id="password" placeholder="Insira sua senha" type="password"/>
-<button class="absolute right-0 top-0 h-12 w-12 flex items-center justify-center text-[#4c669a] hover:text-primary transition-colors focus:outline-none" type="button">
-<span class="material-symbols-outlined">visibility</span>
-</button>
-</div>
-<div class="flex justify-end mt-1">
-<a class="text-sm font-medium text-primary hover:text-blue-700 dark:hover:text-blue-400 transition-colors" href="#">Esqueceu a senha?</a>
-</div>
-</div>
-<!-- Submit Button -->
-<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary hover:bg-blue-700 text-[#f8f9fc] text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md hover:shadow-lg mt-2">
-<span class="truncate">Entrar</span>
-</button>
-<!-- Divider -->
-<div class="relative flex py-2 items-center">
-<div class="flex-grow border-t border-[#e7ebf3] dark:border-gray-700"></div>
-<span class="flex-shrink-0 mx-4 text-gray-400 text-xs">Acesso Seguro SSL</span>
-<div class="flex-grow border-t border-[#e7ebf3] dark:border-gray-700"></div>
-</div>
-<div class="text-center">
-<a class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-[18px]">arrow_back</span>
-                            Voltar para a Loja
-                         </a>
-</div>
-</form>
-</div>
-<p class="text-center text-xs text-gray-400 mt-8">
-                © 2024 Café Carlópolis. Todos os direitos reservados.
-            </p>
-</div>
-</div>
-
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-/* Carlópolis Cart — localStorage (sem backend) */
-(function(){
-  const KEY="carlopolis_cart_v1";
-  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
-  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
-  function add(item, qty=1){
-    const items=read();
-    const i=items.findIndex(x=>x.id===item.id);
-    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
-    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
-    write(items);
-  }
-  function remove(id){ write(read().filter(x=>x.id!==id)); }
-  function setQty(id, qty){
-    const items=read();
-    const it=items.find(x=>x.id===id);
-    if(!it) return;
-    it.qty = Math.max(1, parseInt(qty||1,10));
-    write(items);
-  }
-  function clear(){ write([]); }
-  function totals(){
-    const items=read();
-    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
-    return {items, subtotal, total: subtotal};
-  }
-  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
-  function updateBadge(){
-    const el=document.querySelector('[data-cart-badge]');
-    if(!el) return;
-    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
-    el.textContent = qty>99 ? "99+" : String(qty);
-    el.style.display = qty>0 ? "inline-flex" : "none";
-  }
-  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
-  document.addEventListener("DOMContentLoaded", updateBadge);
-})();
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
 </script>
-
-<script src="site.js" defer></script>
-</body></html>
+</head>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Admin Login</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
+</main>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
+</footer>
+</body>
+</html>

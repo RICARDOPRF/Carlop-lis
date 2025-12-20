@@ -1,43 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login — Café Carlópolis</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<title>Login | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
+</script>
 </head>
-<body class="bg-neutral-950 text-neutral-100">
-<header class="border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold">Café <span class="text-amber-400">Carlópolis</span></a>
-    <nav class="flex flex-wrap gap-6 text-sm text-neutral-300">
-      <a href="index.html#produtos" class="hover:text-white">Loja</a>
-      <a href="historia.html" class="hover:text-white">Nossa História</a>
-      <a href="contato.html" class="hover:text-white">Contato</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="carrinho.html" class="hover:text-white font-semibold">Carrinho</a>
+<body class="bg-bg text-white font-['Work_Sans']">
+<header class="border-b border-borderc p-4">
+  <div class="max-w-6xl mx-auto flex justify-between">
+    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </div>
 </header>
-<main class="max-w-4xl mx-auto px-4 py-14">
-  <h1 class="text-3xl font-extrabold mb-6">Login</h1>
-  <div class="text-neutral-300 leading-relaxed space-y-4">
-    
-<p>Área de acesso para clientes. (Em breve: histórico de pedidos e dados salvos.)</p>
-<p class="text-neutral-400 text-sm">Se você é administrador, acesse <a class="underline hover:text-white" href="admin-login.html">Admin Login</a>.</p>
-
-  </div>
+<main class="max-w-6xl mx-auto p-10">
+  <h1 class="text-3xl font-extrabold text-primary mb-4">Login</h1>
+  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
 </main>
-<footer class="border-t border-white/10 py-8 mt-16">
-  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-neutral-400">
-    <p>© Café Carlópolis</p>
-    <p class="mt-2">
-      <a href="mailto:cafecarlopis@gmail.com" class="hover:text-white">cafecarlopis@gmail.com</a> ·
-      <a href="https://wa.me/554396251248" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a> ·
-      <a href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" class="hover:text-white">Instagram</a> ·
-      <a href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
-    </p>
-  </div>
+<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
+© 2024 Café Carlópolis
 </footer>
 </body>
 </html>
