@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Produto - Café Gourmet | Café Carlópolis</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#d47311",
+        "background-dark": "#221910",
+        "surface-dark": "#332619",
+        "border-dark": "#483623",
+        "text-muted": "#c9ad92"
+      },
+      fontFamily: {
+        body: ["Work Sans", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body{ font-family:"Work Sans",sans-serif; }
+</style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen">
+<header class="border-b border-border-dark bg-background-dark/95 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 font-black text-lg">
+      ☕ Café Carlópolis
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="index.html" class="hover:text-primary">Início</a>
+      <a href="produto-gourmet.html" class="hover:text-primary">Loja</a>
+      <a href="historia.html" class="hover:text-primary">Nossa História</a>
+      <a href="contato.html" class="hover:text-primary">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+    <!-- Galeria -->
+    <div class="space-y-4">
+      <div class="rounded-2xl overflow-hidden border border-border-dark">
+        <img src="gourmet-500g.jpg" alt="Café Carlópolis Gourmet 500g" class="w-full object-cover">
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="gourmet-500g (2).jpg" class="rounded-xl border border-border-dark object-cover">
+        <img src="gourmet-500g.jpg" class="rounded-xl border border-border-dark object-cover">
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="flex flex-col gap-6">
+      <div>
+        <span class="inline-block bg-primary/10 text-primary text-xs font-black px-2 py-1 rounded">Edição Especial</span>
+        <h1 class="text-4xl font-black mt-3">Café Gourmet Carlópolis</h1>
+        <p class="text-text-muted mt-3 leading-relaxed">
+          Café 100% arábica, torra média, com doçura natural e notas de chocolate e caramelo.
+        </p>
+      </div>
+
+      <div class="bg-surface-dark border border-border-dark rounded-xl p-5">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-sm text-text-muted">Preço</span>
+          <span class="text-2xl font-black">R$ 25,00</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <label class="text-sm font-semibold">
+            Peso
+            <select id="pgWeight" class="mt-2 w-full rounded-lg bg-background-dark border border-border-dark">
+              <option value="250">250g</option>
+              <option value="500" selected>500g</option>
+              <option value="1000">1kg</option>
+            </select>
+          </label>
+
+          <label class="text-sm font-semibold">
+            Moagem
+            <select id="pgGrind" class="mt-2 w-full rounded-lg bg-background-dark border border-border-dark">
+              <option value="Grão">Grão</option>
+              <option value="Média">Média</option>
+              <option value="Fina">Fina</option>
+            </select>
+          </label>
+        </div>
+
+        <button id="pgAdd" class="mt-5 w-full h-12 bg-primary rounded-lg font-black hover:bg-orange-600">
+          Adicionar ao carrinho
+        </button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="border border-border-dark rounded-xl p-3">
+          <strong>100% Arábica</strong>
+        </div>
+        <div class="border border-border-dark rounded-xl p-3">
+          <strong>Torra Média</strong>
+        </div>
+        <div class="border border-border-dark rounded-xl p-3">
+          <strong>Notas Doces</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-border-dark text-center py-6 text-sm text-text-muted">
+  © 2025 Café Carlópolis — Todos os direitos reservados.
+</footer>
+
+<script>
+document.getElementById('pgAdd')?.addEventListener('click', () => {
+  const w = document.getElementById('pgWeight').value;
+  const g = document.getElementById('pgGrind').value;
+  alert(`Produto adicionado: Gourmet ${w}g • ${g}`);
+});
+</script>
+
+</body>
+</html>
