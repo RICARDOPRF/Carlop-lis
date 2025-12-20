@@ -36,7 +36,7 @@
 <body class="bg-bg text-white font-display">
 
 <!-- HEADER -->
-<header class="border-b border-borderc bg-bg">
+<header class="border-b border-borderc bg-bg/90 backdrop-blur">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="index.html" class="text-xl font-black text-primary">Café Carlópolis</a>
     <nav class="flex gap-6 text-sm">
@@ -48,85 +48,121 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="relative min-h-[420px] flex items-center justify-center bg-cover bg-center"
-  style="background-image: linear-gradient(rgba(34,25,16,.85), rgba(34,25,16,.85)), url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');">
+<!-- HERO COM FUNDO DE CAFÉ -->
+<section class="relative min-h-[520px] flex items-center justify-center bg-cover bg-center"
+  style="background-image: linear-gradient(rgba(34,25,16,.82), rgba(34,25,16,.92)), url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');">
   <div class="text-center max-w-3xl px-6">
-    <h1 class="text-4xl md:text-5xl font-black mb-4">
-      Nossa História
-    </h1>
+    <h1 class="text-4xl md:text-5xl font-black mb-4">Nossa História</h1>
     <p class="text-muted text-lg">
-      Tradição, família e paixão pelo café atravessando gerações.
+      Origem, tradição e respeito ao café — do campo à xícara.
     </p>
   </div>
 </section>
 
-<!-- CONTEÚDO -->
-<section class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- FUNDADOR -->
+<section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14 items-center">
 
   <!-- TEXTO -->
   <div class="space-y-6">
-    <h2 class="text-3xl font-black text-primary">
-      José Adalto de Oliveira
-    </h2>
+    <h2 class="text-3xl font-black text-primary">José Adalto de Oliveira</h2>
 
     <p class="text-muted leading-relaxed">
-      A arte de produzir cafés especiais exige dedicação, respeito ao tempo da natureza
-      e compromisso com a qualidade. Foi com essa visão que <strong class="text-white">
-      José Adalto de Oliveira</strong> iniciou sua trajetória no cultivo do café
-      em Carlópolis, no Norte Pioneiro do Paraná.
+      A arte de produzir cafés especiais exige dedicação, respeito à terra e compromisso
+      com a qualidade. Foi com essa visão que <strong class="text-white">José Adalto de Oliveira</strong>
+      iniciou sua trajetória em Carlópolis, no Norte Pioneiro do Paraná.
     </p>
 
     <p class="text-muted leading-relaxed">
-      No <strong class="text-white">Sítio Primavera</strong>, a tradição familiar se
-      uniu à inovação. O cuidado começa no plantio, passa pela colheita seletiva
-      e segue até a torrefação artesanal, realizada na própria propriedade.
+      No <strong class="text-white">Sítio Primavera</strong>, tradição e inovação caminham juntas.
+      O cuidado começa no plantio, passa pela colheita seletiva e segue até a torra artesanal,
+      realizada em pequenos lotes para garantir doçura e equilíbrio.
     </p>
 
     <p class="text-muted leading-relaxed">
-      Cada grão carrega história, identidade e o compromisso de levar até você
-      um café autêntico, equilibrado e marcante — do campo direto para a xícara.
+      Mais do que café, o Café Carlópolis entrega identidade, história e propósito.
+      Cada grão carrega o compromisso de levar até você uma experiência autêntica.
     </p>
   </div>
 
-  <!-- FOTO -->
-  <div class="flex justify-center">
-    <div class="bg-surface border border-borderc rounded-xl overflow-hidden shadow-xl max-w-sm">
+  <!-- FOTO REAL DO FUNDADOR -->
+  <div class="relative group">
+    <div class="aspect-[4/5] overflow-hidden rounded-2xl border border-borderc shadow-xl">
       <img 
-        src="https://i.imgur.com/3rXekno.png"
+        src="fundador.jpg"
         alt="José Adalto de Oliveira - Fundador do Café Carlópolis"
-        class="w-full h-auto object-cover"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       >
-      <div class="p-4 text-center">
-        <p class="font-bold">José Adalto de Oliveira</p>
-        <p class="text-sm text-muted">Fundador • Café Carlópolis</p>
+    </div>
+    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 -z-10 rounded-full blur-2xl"></div>
+  </div>
+
+</section>
+
+<!-- CONTEÚDO UNIFICADO -->
+<section class="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-3 gap-8">
+
+  <!-- ESQUERDA -->
+  <div class="lg:col-span-2 bg-surface p-10 rounded-2xl border border-borderc space-y-8">
+    <h3 class="text-2xl font-bold">Tradição que vira experiência</h3>
+    <p class="text-muted">
+      O Café Carlópolis nasce do cuidado com cada detalhe: terroir, clima, manejo e torra artesanal.
+      Tudo é pensado para entregar uma xícara limpa, aromática e equilibrada.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="bg-bg p-6 rounded-xl border border-borderc">
+        <h4 class="font-bold mb-1">Origem</h4>
+        <p class="text-sm text-muted">Grãos selecionados e rastreáveis, direto do sítio para sua casa.</p>
+      </div>
+      <div class="bg-bg p-6 rounded-xl border border-borderc">
+        <h4 class="font-bold mb-1">Torra</h4>
+        <p class="text-sm text-muted">Curvas pensadas para realçar notas de chocolate e caramelo.</p>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-borderc">
+      <h4 class="font-bold mb-4">Do grão ao pacote</h4>
+      <ul class="space-y-3 text-muted text-sm">
+        <li>🌱 Cultivo & manejo responsável</li>
+        <li>🍒 Colheita seletiva de cerejas maduras</li>
+        <li>⚗️ Pós-colheita controlada</li>
+        <li>🔥 Torra artesanal em pequenos lotes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIREITA -->
+  <div class="space-y-6">
+    <div class="bg-surface p-8 rounded-2xl border border-borderc">
+      <h4 class="font-bold mb-4">Valores que guiam tudo</h4>
+      <ul class="space-y-3 text-sm text-muted">
+        <li>☕ Qualidade acima de tudo</li>
+        <li>🌱 Respeito ao campo e às pessoas</li>
+        <li>🔍 Transparência na origem</li>
+        <li>❤️ Paixão pelo café</li>
+      </ul>
+    </div>
+
+    <div class="bg-surface p-8 rounded-2xl border border-borderc">
+      <h4 class="font-bold mb-4">Siga o Café Carlópolis</h4>
+      <a href="https://www.instagram.com/cafecarlopolis_gourmet/" class="block hover:text-primary">Instagram →</a>
+      <a href="https://www.facebook.com/Cafecarlopolisgourmet/" class="block hover:text-primary mt-2">Facebook →</a>
+    </div>
+
+    <div class="bg-surface p-8 rounded-2xl border border-borderc">
+      <h4 class="font-bold mb-4">Pronto pra provar?</h4>
+      <div class="flex gap-3">
+        <a href="produto-gourmet.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Gourmet</a>
+        <a href="produto-premium.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Premium</a>
+        <a href="produto-tradicional.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Tradicional</a>
       </div>
     </div>
   </div>
 
 </section>
 
-<!-- FRASE -->
-<section class="bg-surface border-t border-borderc py-14">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <p class="text-xl md:text-2xl font-semibold italic text-muted">
-      “Produzir café não é apenas um trabalho.  
-      É um compromisso com a terra, com a família e com quem aprecia qualidade.”
-    </p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-[#150f09] border-t border-borderc py-10">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p class="text-sm text-muted">
-      © 2024 Café Carlópolis. Todos os direitos reservados.
-    </p>
-    <div class="flex gap-4 text-sm">
-      <a href="termos.html" class="hover:text-primary">Termos</a>
-      <a href="privacidade.html" class="hover:text-primary">Privacidade</a>
-    </div>
-  </div>
+<footer class="bg-[#150f09] border-t border-borderc py-10 text-center text-sm text-muted">
+  © 2025 Café Carlópolis. Todos os direitos reservados.
 </footer>
 
 </body>
