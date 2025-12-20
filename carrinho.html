@@ -1,32 +1,584 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
-<head>
-<meta charset="UTF-8">
-<title>Carrinho | Café Carlópolis</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carrinho de Compras - Café Carlópolis</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
 <script>
-tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#d47311",bg:"#221910",surface:"#332619",borderc:"#483623",muted:"#c9ad92"}}}}
-</script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#d47311",
+              "background-light": "#f8f7f6",
+              "background-dark": "#221910",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2c241b",
+              "text-main": "#1b140d",
+              "text-muted": "#9a734c",
+              "border-color": "#e7dbcf",
+            },
+            fontFamily: {
+              "display": ["Epilogue", "sans-serif"],
+              "body": ["Epilogue", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d4; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0b0b0; 
+        }
+    </style>
 </head>
-<body class="bg-bg text-white font-['Work_Sans']">
-<header class="border-b border-borderc p-4">
-  <div class="max-w-6xl mx-auto flex justify-between">
-    <a href="index.html" class="font-extrabold text-primary">Café Carlópolis</a>
-    <nav class="flex gap-4 text-sm">
-      <a href="index.html">Início</a>
-      <a href="historia.html">História</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<body class="bg-background-light dark:bg-background-dark text-text-main min-h-screen flex flex-col transition-colors duration-200">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3">
+  <div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap">
+    <a href="index.html" class="flex items-center gap-4 text-white">
+      <div class="flex size-8 items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-3xl">coffee_maker</span>
+      </div>
+      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Café Carlópolis</h2>
+    </a>
+
+    <div class="hidden flex-1 justify-end gap-8 md:flex">
+      <nav class="flex items-center gap-9" aria-label="Navegação principal">
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a>
+        <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+           href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+        </a>
+
+        <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-black gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-4 hover:opacity-90 transition-opacity"
+           href="login.html" data-nav="1">
+          <span class="truncate">Login</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex md:hidden items-center gap-2">
+      <a class="relative flex min-w-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-surface-dark text-white hover:bg-border-dark transition-colors"
+         href="carrinho.html" aria-label="Abrir carrinho" data-nav="1">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 hidden min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-black text-[11px] font-bold leading-[18px] text-center" data-cart-count>0</span>
+      </a>
+
+      <button class="text-white flex items-center justify-center rounded-xl h-10 w-10 bg-surface-dark hover:bg-border-dark transition-colors"
+              aria-label="Menu" data-mobile-toggle="1">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-2 pt-3 hidden md:hidden" data-mobile-menu>
+    <div class="rounded-2xl border border-border-dark bg-[#0f1115] p-3 flex flex-col gap-2">
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html">Início</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#produtos">Loja</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="index.html#historia">Nossa História</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="faq.html">FAQ</a>
+      <a class="px-3 py-2 rounded-xl text-white hover:bg-surface-dark transition-colors" data-nav="1" href="contato.html">Contato</a>
+      <a class="px-3 py-2 rounded-xl bg-primary text-black font-bold hover:opacity-90 transition-opacity" data-nav="1" href="login.html">Login</a>
+    </div>
   </div>
 </header>
-<main class="max-w-6xl mx-auto p-10">
-  <h1 class="text-3xl font-extrabold text-primary mb-4">Carrinho</h1>
-  <p class="text-muted">Conteúdo em fase final de ajuste.</p>
+<div class="md:hidden hidden border-b border-solid border-[#2b3648] bg-[#141a23]" data-mobile-menu="1">
+  <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html" data-nav="1">Início</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#produtos" data-nav="1">Loja</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html#historia" data-nav="1">Nossa História</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="faq.html" data-nav="1">FAQ</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="contato.html" data-nav="1">Contato</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="login.html" data-nav="1">Login</a>
+    <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="carrinho.html" data-nav="1">Carrinho</a>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-6">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-sm font-medium text-text-muted hover:text-primary dark:text-gray-400 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined !text-[18px] mr-2">home</span>
+                        Início
+                    </a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined !text-[18px] text-text-muted">chevron_right</span>
+<span class="ml-1 text-sm font-medium text-text-main dark:text-white md:ml-2">Carrinho</span>
+</div>
+</li>
+</ol>
+</nav>
+<!-- Page Title -->
+<div class="mb-10">
+<h2 class="text-3xl md:text-4xl font-black text-text-main dark:text-white tracking-tight mb-2">Seu Carrinho de Café</h2>
+<p class="text-text-muted dark:text-gray-400 text-lg">Revise seus itens antes de finalizar a compra</p>
+<div id="cartApp" class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <div class="lg:col-span-2">
+    <div id="cartEmpty" class="hidden p-6 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark">
+      <p class="text-text-muted dark:text-gray-300">Seu carrinho está vazio. Bora escolher um café?</p>
+      <a href="index.html#produtos" class="inline-flex mt-4 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition">Ver produtos</a>
+    </div>
+
+    <div id="cartList" class="space-y-4"></div>
+  </div>
+
+  <div class="p-6 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark h-fit">
+    <h3 class="text-xl font-bold text-text-main dark:text-white mb-4">Resumo</h3>
+    <div class="flex justify-between text-text-muted dark:text-gray-300 mb-2"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
+    <div class="flex justify-between text-text-muted dark:text-gray-300 mb-4"><span>Entrega</span><span>Calculada no checkout</span></div>
+    <div class="flex justify-between text-text-main dark:text-white text-lg font-bold border-t border-border-light dark:border-border-dark pt-4">
+      <span>Total</span><span id="cartTotal">R$ 0,00</span>
+    </div>
+    <a id="goCheckout" href="checkout.html" class="block text-center mt-6 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition">Ir para o Checkout</a>
+    <button id="clearCart" class="w-full mt-3 px-5 py-3 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-panel transition">Limpar carrinho</button>
+  </div>
+</div>
+
+</div>
+<div class="flex flex-col lg:flex-row gap-8 xl:gap-12">
+<!-- Left Column: Cart Items -->
+<div class="flex-1">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-color dark:border-[#3a2e22] overflow-hidden">
+<!-- Table Header (Hidden on mobile) -->
+<div class="hidden md:grid grid-cols-12 gap-4 border-b border-border-color dark:border-[#3a2e22] p-5 bg-background-light/50 dark:bg-[#3a2e22]/50">
+<div class="col-span-6 text-sm font-bold text-text-muted uppercase tracking-wider">Produto</div>
+<div class="col-span-2 text-center text-sm font-bold text-text-muted uppercase tracking-wider">Preço</div>
+<div class="col-span-2 text-center text-sm font-bold text-text-muted uppercase tracking-wider">Qtd</div>
+<div class="col-span-2 text-right text-sm font-bold text-text-muted uppercase tracking-wider">Total</div>
+</div>
+<!-- Cart Item 1 -->
+<div class="p-5 border-b border-border-color dark:border-[#3a2e22] last:border-0 hover:bg-gray-50 dark:hover:bg-[#332a21] transition-colors group">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<!-- Product Info -->
+<div class="md:col-span-6 flex gap-4 items-center">
+<div class="relative w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-gray-100 border border-border-color">
+<img alt="Café Gourmet" class="w-full h-full object-cover" data-alt="Bag of gourmet ground coffee on wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpviclNYV3ngBn906Fki3HhoYJmMdEf8teg-8oLrxPUC8nvN-YuwIeaOJIXjZsQu-NtoCJG1asurqGxZnauVXC71qNsCGgpkx_8GXdZfyHXSQ6HP7GuLMZOpzBMAg7sR6LrzVXmK5sgAfn4_wSCgT8nNjM5cizrRZRkdW8LHdoCca3yKqpDC8VKQcwOqisHeU-prJtD9-RrL3Yt3D5ZtyW47k_Np_On7ONc8aafhafHFt_5-_65xyA4yxPkZuMQZE6yK8ThZJ9Vkqf"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-bold text-text-main dark:text-white text-lg leading-tight">Café Carlópolis Gourmet</h3>
+<span class="text-sm text-text-muted dark:text-gray-400 bg-background-light dark:bg-[#3a2e22] px-2 py-0.5 rounded w-fit">Moído - 500g</span>
+<button class="text-red-500 hover:text-red-700 text-sm font-medium flex items-center gap-1 mt-1 md:hidden w-fit">
+<span class="material-symbols-outlined !text-[16px]">delete</span> Remover
+                                    </button>
+</div>
+</div>
+<!-- Price (Mobile: Label + Value) -->
+<div class="md:col-span-2 flex md:justify-center items-center justify-between md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Preço Unitário:</span>
+<span class="text-text-main dark:text-gray-300 font-medium">R$ 35,00</span>
+</div>
+<!-- Quantity Control -->
+<div class="md:col-span-2 flex md:justify-center items-center justify-between md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Quantidade:</span>
+<div class="flex items-center border border-border-color dark:border-gray-600 rounded-lg bg-surface-light dark:bg-background-dark w-fit">
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-lg text-text-main dark:text-white transition-colors">-</button>
+<input class="w-10 text-center border-none bg-transparent p-0 text-text-main dark:text-white focus:ring-0 text-sm font-semibold" readonly="" type="text" value="2"/>
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-r-lg text-primary transition-colors">+</button>
+</div>
+</div>
+<!-- Total & Action -->
+<div class="md:col-span-2 flex flex-col items-end justify-between h-full gap-2">
+<div class="flex items-center justify-between w-full md:w-auto md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Subtotal:</span>
+<span class="text-lg font-bold text-primary">R$ 70,00</span>
+</div>
+<button class="hidden md:flex text-text-muted hover:text-red-500 transition-colors text-sm items-center gap-1 opacity-0 group-hover:opacity-100" title="Remover item">
+<span class="material-symbols-outlined !text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="p-5 border-b border-border-color dark:border-[#3a2e22] last:border-0 hover:bg-gray-50 dark:hover:bg-[#332a21] transition-colors group">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<!-- Product Info -->
+<div class="md:col-span-6 flex gap-4 items-center">
+<div class="relative w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-gray-100 border border-border-color">
+<img alt="Café Premium" class="w-full h-full object-cover" data-alt="Dark roasted coffee beans in a bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqseQWWxN_eydskd83pC9Rckj5tM9hSF0QlKFbcJl7pmBPqnEHMvdJrPu6A25trx4cxNf6ETaOFFfHUVPeEdgSF9iEvqHvo0WVuTAem-RuwBcrvG3mfrJst8x1SrstifDdUcc6p51VUpyB0LeAZ_vXlDN4JJVBACE6MkNUTVsmoS4eUX03FjGEn14DHETERDuaCULO8JiTDQIab3xUHm1eGzkS5vCSH9bclt2GpyrpZKdNUCFhKwtLSG0eHeBUuQIYQ5rNPDq6U4hU"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-bold text-text-main dark:text-white text-lg leading-tight">Café Carlópolis Premium</h3>
+<span class="text-sm text-text-muted dark:text-gray-400 bg-background-light dark:bg-[#3a2e22] px-2 py-0.5 rounded w-fit">Em Grãos - 1kg</span>
+<button class="text-red-500 hover:text-red-700 text-sm font-medium flex items-center gap-1 mt-1 md:hidden w-fit">
+<span class="material-symbols-outlined !text-[16px]">delete</span> Remover
+                                    </button>
+</div>
+</div>
+<!-- Price -->
+<div class="md:col-span-2 flex md:justify-center items-center justify-between md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Preço Unitário:</span>
+<span class="text-text-main dark:text-gray-300 font-medium">R$ 85,00</span>
+</div>
+<!-- Quantity -->
+<div class="md:col-span-2 flex md:justify-center items-center justify-between md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Quantidade:</span>
+<div class="flex items-center border border-border-color dark:border-gray-600 rounded-lg bg-surface-light dark:bg-background-dark w-fit">
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-lg text-text-main dark:text-white transition-colors">-</button>
+<input class="w-10 text-center border-none bg-transparent p-0 text-text-main dark:text-white focus:ring-0 text-sm font-semibold" readonly="" type="text" value="1"/>
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-r-lg text-primary transition-colors">+</button>
+</div>
+</div>
+<!-- Total -->
+<div class="md:col-span-2 flex flex-col items-end justify-between h-full gap-2">
+<div class="flex items-center justify-between w-full md:w-auto md:block">
+<span class="md:hidden text-sm font-medium text-text-muted">Subtotal:</span>
+<span class="text-lg font-bold text-primary">R$ 85,00</span>
+</div>
+<button class="hidden md:flex text-text-muted hover:text-red-500 transition-colors text-sm items-center gap-1 opacity-0 group-hover:opacity-100" title="Remover item">
+<span class="material-symbols-outlined !text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Actions Row -->
+<div class="p-5 bg-background-light/30 dark:bg-[#3a2e22]/30 flex flex-wrap justify-between items-center gap-4">
+<a class="text-primary hover:text-primary/80 font-medium text-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined !text-[18px]">arrow_back</span> Continuar Comprando
+                        </a>
+<button class="text-sm font-medium text-text-muted hover:text-text-main dark:hover:text-white transition-colors">
+                            Limpar Carrinho
+                        </button>
+</div>
+</div>
+<!-- Cross Sell (Optional visual flair) -->
+<div class="mt-8">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-4">Que tal levar também?</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-[#3a2e22] bg-surface-light dark:bg-surface-dark hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-14 h-14 bg-gray-100 rounded-md overflow-hidden shrink-0">
+<img alt="Caneca" class="w-full h-full object-cover" data-alt="Ceramic coffee mug white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnKOjeun56biZm92uT4kr745wmspZXm-i0nSsSWWq1u_akuxEHO4k53KJ-nBvxCxVfxHCXZRxG_-VWXBrSvte8isfdK6m_I-O2udZM9FDn9O-qSBJ929XbkLYiyDwMBmcLSbsSP3UExxt36lKGbPVwMK7Py2ggD9Dic7bsNRDHR4mgEJBwsUCrI_iZ60eVoGeMKw-xmyh86N5UUINDV0cxEi9UNH8I-qjXKUX7zvz45JA_Wj5b90IFtfWWfOiau_j-rhbKW6h867I9"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-text-main dark:text-white">Caneca Cerâmica</h4>
+<p class="text-xs text-text-muted">R$ 25,00</p>
+</div>
+<button class="text-primary bg-primary/10 hover:bg-primary/20 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined !text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-[#3a2e22] bg-surface-light dark:bg-surface-dark hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-14 h-14 bg-gray-100 rounded-md overflow-hidden shrink-0">
+<img alt="Filtros" class="w-full h-full object-cover" data-alt="Coffee paper filters box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqSOPk5bFmzK38tyAxQzzwbk7WM-qe_YT7fSfvot6pYqFG1NaEQd41FMb1bYq7FhUyE3HbPdatWy-EEbywIO815FfEUaYZ4bTBbM-pDOkQ_aO9StroO-fGk73-JoEbHIMhUJB87PCp8WBb7unzukHNiACmj9TUidySp6L-BK9QtVAIyplPXoL_qWZVt3xKPn3wogobDMiRjiLQmLZpo6dzZz8UBnsvDjv9tX-eAkXCQbCxTxV8hPE1ne7en04zUjLkXINX5sfyKsMq"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-text-main dark:text-white">Filtros V60</h4>
+<p class="text-xs text-text-muted">R$ 45,00</p>
+</div>
+<button class="text-primary bg-primary/10 hover:bg-primary/20 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined !text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary Sticky -->
+<div class="w-full lg:w-[380px] xl:w-[420px]">
+<div class="sticky top-24 space-y-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg border border-border-color dark:border-[#3a2e22] p-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+                            Resumo do Pedido
+                        </h3>
+<!-- Coupon -->
+<div class="mb-6">
+<label class="block text-sm font-medium text-text-muted mb-2">Cupom de Desconto</label>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-border-color dark:border-gray-600 bg-background-light dark:bg-background-dark text-sm focus:ring-primary focus:border-primary" placeholder="Código" type="text"/>
+<button class="px-4 py-2 bg-text-main dark:bg-gray-700 text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors">Aplicar</button>
+</div>
+</div>
+<!-- Shipping -->
+<div class="mb-6">
+<label class="block text-sm font-medium text-text-muted mb-2">Estimativa de Frete</label>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-border-color dark:border-gray-600 bg-background-light dark:bg-background-dark text-sm focus:ring-primary focus:border-primary" placeholder="CEP" type="text"/>
+<button class="text-primary text-sm font-bold hover:underline whitespace-nowrap">Calcular</button>
+</div>
+<a class="text-xs text-text-muted mt-1 hover:underline block" href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei meu CEP</a>
+</div>
+<hr class="border-border-color dark:border-[#3a2e22] my-4"/>
+<!-- Calculations -->
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-text-muted">Subtotal (3 itens)</span>
+<span class="font-medium text-text-main dark:text-white">R$ 155,00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-text-muted">Frete</span>
+<span class="font-medium text-text-muted">A calcular</span>
+</div>
+<div class="flex justify-between text-sm text-green-600">
+<span class="">Desconto</span>
+<span class="font-medium">- R$ 0,00</span>
+</div>
+</div>
+<hr class="border-border-color dark:border-[#3a2e22] my-4"/>
+<!-- Total -->
+<div class="flex justify-between items-end mb-6">
+<span class="text-lg font-bold text-text-main dark:text-white">Total</span>
+<div class="text-right">
+<span class="text-3xl font-black text-text-main dark:text-white block leading-none">R$ 155,00</span>
+<span class="text-xs text-text-muted font-normal">ou 3x de R$ 51,66 sem juros</span>
+</div>
+</div>
+<!-- Actions -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
+                            Finalizar Compra
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Trust Signals -->
+<div class="mt-6 flex flex-col items-center gap-3">
+<div class="flex items-center justify-center gap-2 text-text-muted text-xs">
+<span class="material-symbols-outlined !text-[16px]">lock</span>
+                                Compra 100% Segura
+                            </div>
+<div class="flex gap-2 opacity-60 grayscale hover:grayscale-0 transition-all">
+<!-- Simple CSS shapes for credit card logos as placeholders -->
+<div class="w-8 h-5 bg-blue-600 rounded"></div>
+<div class="w-8 h-5 bg-red-500 rounded"></div>
+<div class="w-8 h-5 bg-yellow-500 rounded"></div>
+<div class="w-8 h-5 bg-black rounded"></div>
+</div>
+</div>
+</div>
+<!-- Help Card -->
+<div class="bg-primary/10 rounded-xl p-4 border border-primary/20 flex items-start gap-3">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-text-main dark:text-white">Precisa de ajuda?</h4>
+<p class="text-xs text-text-muted mt-1">Fale conosco pelo WhatsApp ou ligue para (11) 99999-9999.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </main>
-<footer class="border-t border-borderc p-6 text-center text-sm text-muted">
-© 2024 Café Carlópolis
+<!-- Simple Footer -->
+<footer class="bg-[#150f09] text-white pt-16 pb-8 border-t border-border-dark">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">coffee_maker</span>
+          <h3 class="text-lg font-bold">Café Carlópolis</h3>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Levando o sabor autêntico do Norte Pioneiro do Paraná até a sua casa. Qualidade, tradição e amor pelo café em cada grão.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Navegação</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html">Início</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#produtos">Loja</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="index.html#historia">Nossa História</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="faq.html">FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors" data-nav="1" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Contato</h4>
+        <ul class="flex flex-col gap-2 text-text-muted text-sm">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>+55 43 9625-1248</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span><a class="hover:text-primary transition-colors" href="mailto:cafecarlopis@gmail.com">cafecarlopis@gmail.com</a></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span>Carlópolis, PR</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h4 class="text-white font-bold">Redes Sociais</h4>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.instagram.com/cafecarlopolis_gourmet" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://www.facebook.com/Cafecarlopolisgourmet/?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors" href="https://wa.me/554396251248?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20no%20Caf%C3%A9%20Carl%C3%B3polis%20%E2%98%95" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="material-symbols-outlined">chat</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-border-dark pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-text-muted text-sm">© 2025 Café Carlópolis. Todos os direitos reservados.</p>
+      <div class="flex gap-6 text-text-muted text-sm">
+        <a class="hover:text-primary transition-colors" href="privacidade.html">Privacidade</a>
+        <a class="hover:text-primary transition-colors" href="termos.html">Termos</a>
+      </div>
+    </div>
+  </div>
 </footer>
-</body>
-</html>
+
+<script>
+/* Carlópolis Cart — localStorage (sem backend) */
+(function(){
+  const KEY="carlopolis_cart_v1";
+  function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function write(items){ localStorage.setItem(KEY, JSON.stringify(items||[])); updateBadge(); }
+  function add(item, qty=1){
+    const items=read();
+    const i=items.findIndex(x=>x.id===item.id);
+    if(i>=0){ items[i].qty = (items[i].qty||1)+qty; }
+    else { items.push({id:item.id, name:item.name, price:item.price, img:item.img||"", qty:qty}); }
+    write(items);
+  }
+  function remove(id){ write(read().filter(x=>x.id!==id)); }
+  function setQty(id, qty){
+    const items=read();
+    const it=items.find(x=>x.id===id);
+    if(!it) return;
+    it.qty = Math.max(1, parseInt(qty||1,10));
+    write(items);
+  }
+  function clear(){ write([]); }
+  function totals(){
+    const items=read();
+    const subtotal=items.reduce((s,x)=>s+(x.price||0)*(x.qty||1),0);
+    return {items, subtotal, total: subtotal};
+  }
+  function fmtBRL(v){ try{ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }catch(e){ return "R$ "+(v||0).toFixed(2); } }
+  function updateBadge(){
+    const el=document.querySelector('[data-cart-badge]');
+    if(!el) return;
+    const qty=read().reduce((s,x)=>s+(x.qty||1),0);
+    el.textContent = qty>99 ? "99+" : String(qty);
+    el.style.display = qty>0 ? "inline-flex" : "none";
+  }
+  window.CarlopolisCart={read,write,add,remove,setQty,clear,totals,fmtBRL,updateBadge,KEY};
+  document.addEventListener("DOMContentLoaded", updateBadge);
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const $list = document.getElementById("cartList");
+  const $empty = document.getElementById("cartEmpty");
+  const $subtotal = document.getElementById("cartSubtotal");
+  const $total = document.getElementById("cartTotal");
+  const $clear = document.getElementById("clearCart");
+  const $checkout = document.getElementById("goCheckout");
+
+  function render(){
+    const {items, subtotal, total} = window.CarlopolisCart.totals();
+    $subtotal.textContent = window.CarlopolisCart.fmtBRL(subtotal);
+    $total.textContent = window.CarlopolisCart.fmtBRL(total);
+
+    if(!items.length){
+      $list.innerHTML = "";
+      $empty.classList.remove("hidden");
+      $checkout.classList.add("opacity-50","pointer-events-none");
+      return;
+    }
+    $empty.classList.add("hidden");
+    $checkout.classList.remove("opacity-50","pointer-events-none");
+
+    $list.innerHTML = items.map(it => `
+      <div class="p-4 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark flex gap-4 items-center">
+        <div class="w-20 h-20 rounded-lg bg-gray-100 dark:bg-panel flex items-center justify-center overflow-hidden">
+          ${it.img ? `<img src="${it.img}" alt="${it.name}" class="w-full h-full object-cover">` : `<span class="material-symbols-outlined text-3xl text-text-muted">coffee</span>`}
+        </div>
+        <div class="flex-1">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-bold text-text-main dark:text-white">${it.name}</p>
+              <p class="text-sm text-text-muted dark:text-gray-300">${window.CarlopolisCart.fmtBRL(it.price)} / un.</p>
+            </div>
+            <button class="text-text-muted hover:text-red-500 transition" data-remove="${it.id}" aria-label="Remover">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <button class="px-3 py-2 rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-panel transition" data-dec="${it.id}">-</button>
+              <input class="w-14 text-center px-2 py-2 rounded-lg border border-border-light dark:border-border-dark bg-transparent text-text-main dark:text-white" type="number" min="1" value="${it.qty}" data-qty="${it.id}">
+              <button class="px-3 py-2 rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-panel transition" data-inc="${it.id}">+</button>
+            </div>
+            <div class="font-bold text-text-main dark:text-white">${window.CarlopolisCart.fmtBRL(it.price * it.qty)}</div>
+          </div>
+        </div>
+      </div>
+    `).join("");
+
+    $list.querySelectorAll("[data-remove]").forEach(btn => btn.addEventListener("click", e=>{
+      window.CarlopolisCart.remove(e.currentTarget.getAttribute("data-remove"));
+      render();
+    }));
+    $list.querySelectorAll("[data-inc]").forEach(btn => btn.addEventListener("click", e=>{
+      const id=e.currentTarget.getAttribute("data-inc");
+      const it=window.CarlopolisCart.read().find(x=>x.id===id);
+      window.CarlopolisCart.setQty(id,(it.qty||1)+1);
+      render();
+    }));
+    $list.querySelectorAll("[data-dec]").forEach(btn => btn.addEventListener("click", e=>{
+      const id=e.currentTarget.getAttribute("data-dec");
+      const it=window.CarlopolisCart.read().find(x=>x.id===id);
+      window.CarlopolisCart.setQty(id,Math.max(1,(it.qty||1)-1));
+      render();
+    }));
+    $list.querySelectorAll("[data-qty]").forEach(inp => inp.addEventListener("change", e=>{
+      const id=e.currentTarget.getAttribute("data-qty");
+      window.CarlopolisCart.setQty(id, e.currentTarget.value);
+      render();
+    }));
+  }
+
+  $clear.addEventListener("click", function(){ window.CarlopolisCart.clear(); render(); });
+  render();
+});
+</script>
+
+<script src="site.js" defer></script>
+</body></html>
