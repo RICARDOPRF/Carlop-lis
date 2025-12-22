@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Nossa História | Café Carlópolis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Nossa História | Café Carlópolis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#d47311",
-            bg: "#221910",
-            surface: "#332619",
-            borderc: "#483623",
-            muted: "#c9ad92"
-          },
-          fontFamily: {
-            display: ["Work Sans", "sans-serif"]
-          }
-        }
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#d47311",
+        bg: "#221910",
+        surface: "#332619",
+        borderc: "#483623",
+        muted: "#c9ad92"
+      },
+      fontFamily: {
+        display: ["Work Sans", "sans-serif"]
       }
     }
-  </script>
+  }
+}
+</script>
 </head>
 
 <body class="bg-bg text-white font-display">
 
 <!-- HEADER -->
-<header class="border-b border-borderc bg-bg/90 backdrop-blur">
+<header class="border-b border-borderc bg-bg">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="index.html" class="text-xl font-black text-primary">Café Carlópolis</a>
     <nav class="flex gap-6 text-sm">
@@ -48,121 +45,103 @@
   </div>
 </header>
 
-<!-- HERO COM FUNDO DE CAFÉ -->
-<section class="relative min-h-[520px] flex items-center justify-center bg-cover bg-center"
-  style="background-image: linear-gradient(rgba(34,25,16,.82), rgba(34,25,16,.92)), url('https://reporterbrasil.org.br/wp-content/uploads/2023/11/cafe_mg_03_2023-12-e1723736121596.jpg');">
+<!-- HERO -->
+<section class="relative min-h-[420px] flex items-center justify-center bg-cover bg-center"
+style="background-image: linear-gradient(rgba(34,25,16,.88), rgba(34,25,16,.88)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');">
   <div class="text-center max-w-3xl px-6">
     <h1 class="text-4xl md:text-5xl font-black mb-4">Nossa História</h1>
     <p class="text-muted text-lg">
-      Origem, tradição e respeito ao café — do campo à xícara.
+      Tradição, origem e respeito ao café — do campo à xícara.
     </p>
   </div>
 </section>
 
 <!-- FUNDADOR -->
-<section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14 items-center">
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
 
-  <!-- TEXTO -->
-  <div class="space-y-6">
-    <h2 class="text-3xl font-black text-primary">José Adalto de Oliveira</h2>
+<div class="space-y-6">
+  <h2 class="text-3xl font-black text-primary">José Adalto de Oliveira</h2>
 
-    <p class="text-muted leading-relaxed">
-      A arte de produzir cafés especiais exige dedicação, respeito à terra e compromisso
-      com a qualidade. Foi com essa visão que <strong class="text-white">José Adalto de Oliveira</strong>
-      iniciou sua trajetória em Carlópolis, no Norte Pioneiro do Paraná.
-    </p>
+  <p class="text-muted">
+    A arte de produzir cafés especiais exige dedicação, respeito à terra e compromisso
+    com a qualidade. Foi com essa visão que <strong class="text-white">José Adalto</strong>
+    iniciou sua trajetória em Carlópolis — PR.
+  </p>
 
-    <p class="text-muted leading-relaxed">
-      No <strong class="text-white">Sítio Primavera</strong>, tradição e inovação caminham juntas.
-      O cuidado começa no plantio, passa pela colheita seletiva e segue até a torra artesanal,
-      realizada em pequenos lotes para garantir doçura e equilíbrio.
-    </p>
+  <p class="text-muted">
+    No <strong class="text-white">Sítio Primavera</strong>, tradição e inovação caminham juntas.
+    Cada etapa é pensada para entregar um café limpo, aromático e equilibrado.
+  </p>
 
-    <p class="text-muted leading-relaxed">
-      Mais do que café, o Café Carlópolis entrega identidade, história e propósito.
-      Cada grão carrega o compromisso de levar até você uma experiência autêntica.
-    </p>
+  <p class="text-muted">
+    Mais do que café, entregamos identidade, história e propósito.
+  </p>
+</div>
+
+<div class="relative group">
+  <div class="aspect-[4/5] overflow-hidden rounded-2xl border border-borderc">
+    <img src="fundador.jpg" alt="José Adalto de Oliveira"
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
   </div>
-
-  <!-- FOTO REAL DO FUNDADOR -->
-  <div class="relative group">
-    <div class="aspect-[4/5] overflow-hidden rounded-2xl border border-borderc shadow-xl">
-      <img 
-        src="fundador.jpg"
-        alt="José Adalto de Oliveira - Fundador do Café Carlópolis"
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      >
-    </div>
-    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 -z-10 rounded-full blur-2xl"></div>
-  </div>
+</div>
 
 </section>
 
-<!-- CONTEÚDO UNIFICADO -->
-<section class="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-3 gap-8">
+<!-- CONTEÚDO VISUAL -->
+<section class="max-w-7xl mx-auto px-6 pb-20 grid lg:grid-cols-3 gap-6">
 
-  <!-- ESQUERDA -->
-  <div class="lg:col-span-2 bg-surface p-10 rounded-2xl border border-borderc space-y-8">
-    <h3 class="text-2xl font-bold">Tradição que vira experiência</h3>
-    <p class="text-muted">
-      O Café Carlópolis nasce do cuidado com cada detalhe: terroir, clima, manejo e torra artesanal.
-      Tudo é pensado para entregar uma xícara limpa, aromática e equilibrada.
-    </p>
+<!-- COLUNA 1 -->
+<div class="lg:col-span-2 space-y-6 bg-surface p-8 rounded-xl border border-borderc">
+<h3 class="text-2xl font-bold mb-2">Tradição que vira experiência</h3>
+<p class="text-muted">
+O Café Carlópolis nasce do cuidado com cada detalhe: terroir, clima, manejo e torra artesanal.
+</p>
 
-    <div class="grid sm:grid-cols-2 gap-6">
-      <div class="bg-bg p-6 rounded-xl border border-borderc">
-        <h4 class="font-bold mb-1">Origem</h4>
-        <p class="text-sm text-muted">Grãos selecionados e rastreáveis, direto do sítio para sua casa.</p>
-      </div>
-      <div class="bg-bg p-6 rounded-xl border border-borderc">
-        <h4 class="font-bold mb-1">Torra</h4>
-        <p class="text-sm text-muted">Curvas pensadas para realçar notas de chocolate e caramelo.</p>
-      </div>
-    </div>
+<div class="grid sm:grid-cols-2 gap-4 mt-6">
+<div class="bg-bg p-4 rounded-lg border border-borderc">
+<h4 class="font-bold">Origem</h4>
+<p class="text-sm text-muted">Grãos rastreáveis, direto do sítio.</p>
+</div>
+<div class="bg-bg p-4 rounded-lg border border-borderc">
+<h4 class="font-bold">Torra</h4>
+<p class="text-sm text-muted">Perfis pensados para chocolate e caramelo.</p>
+</div>
+</div>
+</div>
 
-    <div class="pt-6 border-t border-borderc">
-      <h4 class="font-bold mb-4">Do grão ao pacote</h4>
-      <ul class="space-y-3 text-muted text-sm">
-        <li>🌱 Cultivo & manejo responsável</li>
-        <li>🍒 Colheita seletiva de cerejas maduras</li>
-        <li>⚗️ Pós-colheita controlada</li>
-        <li>🔥 Torra artesanal em pequenos lotes</li>
-      </ul>
-    </div>
-  </div>
+<!-- COLUNA 2 -->
+<div class="space-y-6">
 
-  <!-- DIREITA -->
-  <div class="space-y-6">
-    <div class="bg-surface p-8 rounded-2xl border border-borderc">
-      <h4 class="font-bold mb-4">Valores que guiam tudo</h4>
-      <ul class="space-y-3 text-sm text-muted">
-        <li>☕ Qualidade acima de tudo</li>
-        <li>🌱 Respeito ao campo e às pessoas</li>
-        <li>🔍 Transparência na origem</li>
-        <li>❤️ Paixão pelo café</li>
-      </ul>
-    </div>
+<div class="bg-surface p-6 rounded-xl border border-borderc">
+<h4 class="font-bold mb-3">Valores que guiam tudo</h4>
+<ul class="space-y-2 text-sm text-muted">
+<li>☕ Qualidade acima de tudo</li>
+<li>🌱 Respeito ao campo</li>
+<li>🔍 Transparência</li>
+<li>❤️ Paixão pelo café</li>
+</ul>
+</div>
 
-    <div class="bg-surface p-8 rounded-2xl border border-borderc">
-      <h4 class="font-bold mb-4">Siga o Café Carlópolis</h4>
-      <a href="https://www.instagram.com/cafecarlopolis_gourmet/" class="block hover:text-primary">Instagram →</a>
-      <a href="https://www.facebook.com/Cafecarlopolisgourmet/" class="block hover:text-primary mt-2">Facebook →</a>
-    </div>
+<div class="bg-surface p-6 rounded-xl border border-borderc">
+<h4 class="font-bold mb-3">Siga o Café Carlópolis</h4>
+<a href="https://www.instagram.com/cafecarlopolis_gourmet/" class="block hover:text-primary">Instagram →</a>
+<a href="https://www.facebook.com/Cafecarlopolisgourmet/" class="block hover:text-primary">Facebook →</a>
+</div>
 
-    <div class="bg-surface p-8 rounded-2xl border border-borderc">
-      <h4 class="font-bold mb-4">Pronto pra provar?</h4>
-      <div class="flex gap-3">
-        <a href="produto-gourmet.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Gourmet</a>
-        <a href="produto-premium.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Premium</a>
-        <a href="produto-tradicional.html" class="px-4 py-2 bg-bg rounded-lg border border-borderc hover:border-primary">Tradicional</a>
-      </div>
-    </div>
-  </div>
+<div class="bg-surface p-6 rounded-xl border border-borderc">
+<h4 class="font-bold mb-3">Pronto pra provar?</h4>
+<div class="flex gap-2">
+<a href="produto-gourmet.html" class="px-4 py-2 bg-bg rounded border border-borderc">Gourmet</a>
+<a href="produto-premium.html" class="px-4 py-2 bg-bg rounded border border-borderc">Premium</a>
+<a href="produto-tradicional.html" class="px-4 py-2 bg-bg rounded border border-borderc">Tradicional</a>
+</div>
+</div>
 
+</div>
 </section>
 
 <footer class="bg-[#150f09] border-t border-borderc py-10 text-center text-sm text-muted">
-  © 2025 Café Carlópolis. Todos os direitos reservados.
+© 2025 Café Carlópolis. Todos os direitos reservados.
 </footer>
 
 </body>
